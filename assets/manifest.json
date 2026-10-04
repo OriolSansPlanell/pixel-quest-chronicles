@@ -1,0 +1,937 @@
+{
+ "schema": "pqc/assets@1",
+ "pack_root": "vendor/ninja-adventure",
+ "notes": "Logical ids for all art and audio. Paths are relative to pack_root unless they start with 'vendor/' or 'assets/'. Recolour maps swap exact palette colours (the pack uses one shared palette).",
+ "actors": {
+  "brannoc": {
+   "src": "Actor/Character/Monk",
+   "type": "character",
+   "recolor": {
+    "#56864c": "#8a86a3",
+    "#345a52": "#5d5878",
+    "#3b3643": "#8c3a22",
+    "#d14b34": "#b8401f"
+   },
+   "voice": {
+    "pitch": 150
+   },
+   "stand_in": true,
+   "note": "Dwarf fighter stand-in: recoloured Monk (iron cap, copper beard, red tunic)"
+  },
+  "ilsevel": {
+   "src": "Actor/Character/SorcererOrange",
+   "type": "character",
+   "recolor": {
+    "#5f7160": "#c3c0d6",
+    "#e46d3a": "#4f8fd6",
+    "#d14b34": "#2b4c8c"
+   },
+   "voice": {
+    "pitch": 330
+   },
+   "stand_in": true,
+   "note": "Elf wizard stand-in: silver hair, blue robes"
+  },
+  "tamsin": {
+   "src": "Actor/Character/Villager5",
+   "type": "character",
+   "recolor": {
+    "#56864c": "#4b2f6b",
+    "#a8a129": "#7e4fa3",
+    "#c8966b": "#7e4fa3",
+    "#fce2ca": "#c3c0d6"
+   },
+   "voice": {
+    "pitch": 400
+   },
+   "stand_in": true,
+   "note": "Halfling rogue stand-in: violet hood and cloak"
+  },
+  "oriel": {
+   "src": "Actor/Character/Woman",
+   "type": "character",
+   "recolor": {
+    "#f1c471": "#9e3a2a",
+    "#d78b4a": "#6b2a20",
+    "#548789": "#c3c0d6",
+    "#79b8ce": "#f4f2fa",
+    "#e0394c": "#f2c94c"
+   },
+   "voice": {
+    "pitch": 280
+   },
+   "stand_in": true,
+   "note": "Cleric stand-in: auburn hair, white tabard, gold accents"
+  },
+  "maddy_fenn": {
+   "src": "Actor/Character/Villager4",
+   "type": "character",
+   "voice": {
+    "pitch": 260
+   }
+  },
+  "wil_fenn": {
+   "src": "Actor/Character/Boy",
+   "type": "character",
+   "voice": {
+    "pitch": 300
+   }
+  },
+  "tobin_ashdown": {
+   "src": "Actor/Character/Master",
+   "type": "character",
+   "voice": {
+    "pitch": 170
+   }
+  },
+  "edda_rook": {
+   "src": "Actor/Character/GladiatorBlue",
+   "type": "character",
+   "voice": {
+    "pitch": 220
+   }
+  },
+  "mother_fennick": {
+   "src": "Actor/Character/Shaman",
+   "type": "character",
+   "voice": {
+    "pitch": 360
+   }
+  },
+  "petra_glim": {
+   "src": "Actor/Character/Inspector",
+   "type": "character",
+   "voice": {
+    "pitch": 240
+   }
+  },
+  "brother_ambrose": {
+   "src": "Actor/Character/Monk2",
+   "type": "character",
+   "voice": {
+    "pitch": 210
+   }
+  },
+  "ysolde_marr": {
+   "src": "Actor/Character/SorcererBlack",
+   "type": "character",
+   "recolor": {
+    "#d14b34": "#5d5878",
+    "#e0394c": "#8a86a3",
+    "#cf736d": "#c3c0d6"
+   },
+   "voice": {
+    "pitch": 200
+   },
+   "stand_in": true
+  },
+  "rusk": {
+   "src": "Actor/Character/DemonGreen",
+   "type": "character",
+   "voice": {
+    "pitch": 450
+   }
+  },
+  "goblin_warrior": {
+   "src": "Actor/Character/GreenPig",
+   "type": "character",
+   "voice": {
+    "pitch": 380
+   },
+   "stand_in": true,
+   "note": "Goblin stand-in"
+  },
+  "goblin_minion": {
+   "src": "Actor/Character/DemonGreen",
+   "type": "character",
+   "voice": {
+    "pitch": 460
+   },
+   "stand_in": true,
+   "note": "Goblin minion stand-in"
+  },
+  "goblin_boss": {
+   "src": "Actor/Character/GreenPig",
+   "type": "character",
+   "recolor": {
+    "#adbc3a": "#a8a129",
+    "#74a334": "#56864c"
+   },
+   "voice": {
+    "pitch": 330
+   },
+   "stand_in": true
+  },
+  "skarrow": {
+   "src": "Actor/Character/GreenPig",
+   "type": "character",
+   "recolor": {
+    "#adbc3a": "#d9a066",
+    "#74a334": "#a0703f",
+    "#8f3e56": "#4b2f6b"
+   },
+   "voice": {
+    "pitch": 300
+   },
+   "stand_in": true,
+   "note": "Skarrow stand-in until bespoke boss art"
+  },
+  "bandit": {
+   "src": "Actor/Character/Hunter",
+   "type": "character",
+   "voice": {
+    "pitch": 240
+   }
+  },
+  "skeleton": {
+   "src": "Actor/Character/Skeleton",
+   "type": "character",
+   "voice": {
+    "pitch": 200
+   }
+  },
+  "zombie": {
+   "src": "Actor/Character/SkeletonDemon",
+   "type": "character",
+   "voice": {
+    "pitch": 150
+   },
+   "stand_in": true
+  },
+  "wolf": {
+   "src": "Actor/Monster/Beast2",
+   "type": "monster",
+   "sheet": "Beast2.png",
+   "stand_in": true,
+   "voice": {
+    "pitch": 180
+   }
+  },
+  "worg": {
+   "src": "Actor/Monster/Beast",
+   "type": "monster",
+   "sheet": "Beast.png",
+   "stand_in": true,
+   "voice": {
+    "pitch": 140
+   }
+  },
+  "hollowed": {
+   "src": "Actor/Monster/Spirit",
+   "type": "monster",
+   "sheet": "SpriteSheet.png",
+   "voice": {
+    "pitch": 500
+   }
+  }
+ },
+ "terrain": {
+  "_layout": "Each terrain is a block in TilesetFloor.png: 3x3 edge block at origin, inner corners at origin+(5,1)..(6,2) [BR,BL / TR,TL grass], base fill tiles listed separately.",
+  "grass_base": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloor.png",
+   "fill": [
+    [
+     0,
+     12
+    ]
+   ],
+   "detail": [
+    [
+     1,
+     12
+    ],
+    [
+     2,
+     12
+    ],
+    [
+     3,
+     12
+    ],
+    [
+     4,
+     12
+    ]
+   ],
+   "detail_rate": 0.08
+  },
+  "dirt": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloor.png",
+   "origin": [
+    0,
+    7
+   ]
+  },
+  "sand": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloor.png",
+   "origin": [
+    0,
+    0
+   ]
+  },
+  "snow": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloor.png",
+   "origin": [
+    0,
+    14
+   ]
+  },
+  "dirt_dark": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloor.png",
+   "origin": [
+    11,
+    7
+   ]
+  }
+ },
+ "props": {
+  "house_orange": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    0,
+    0,
+    4,
+    3
+   ],
+   "solid": "all"
+  },
+  "house_beige": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    4,
+    0,
+    4,
+    3
+   ],
+   "solid": "all"
+  },
+  "house_orange2": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    8,
+    0,
+    4,
+    3
+   ],
+   "solid": "all"
+  },
+  "house_brick": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    12,
+    0,
+    4,
+    3
+   ],
+   "solid": "all"
+  },
+  "tree_round": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    0,
+    0,
+    2,
+    2
+   ],
+   "solid": "base"
+  },
+  "tree_pine": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    2,
+    0,
+    2,
+    2
+   ],
+   "solid": "base"
+  },
+  "tree_dead": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    4,
+    0,
+    2,
+    2
+   ],
+   "solid": "base"
+  },
+  "tree_oak": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    6,
+    0,
+    2,
+    2
+   ],
+   "solid": "base"
+  },
+  "tree_cluster": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    4,
+    2,
+    4,
+    3
+   ],
+   "solid": "base"
+  },
+  "stump": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    0,
+    8,
+    2,
+    2
+   ],
+   "solid": "base"
+  },
+  "bush": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    0,
+    10,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "bush2": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    1,
+    10,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "flowers": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    0,
+    11,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "flowers2": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    1,
+    11,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "rock_brown": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    14,
+    8,
+    2,
+    2
+   ],
+   "solid": "base"
+  },
+  "barrel": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "sign": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    0,
+    2,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "gravestone": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    3,
+    2,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "stone_lantern": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    0,
+    5,
+    1,
+    2
+   ],
+   "light": {
+    "radius": 34,
+    "offset": [
+     8,
+     9
+    ]
+   },
+   "stand_in": true,
+   "note": "Stand-in for the iron-and-glass lantern posts of the Lantern Road",
+   "solid": "base"
+  },
+  "well": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    5,
+    1,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "pine_cluster": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    0,
+    2,
+    4,
+    3
+   ],
+   "solid": "base"
+  },
+  "tree_light": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    16,
+    0,
+    2,
+    2
+   ],
+   "solid": "base",
+   "note": "Stand-in for the birches of the Lanternmarch"
+  },
+  "boulders": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    12,
+    5,
+    4,
+    3
+   ],
+   "solid": "base"
+  },
+  "rock_small": {
+   "sheet": "Backgrounds/Tilesets/TilesetNature.png",
+   "rect": [
+    15,
+    18,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "haystack": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    12,
+    4,
+    1,
+    2
+   ],
+   "solid": "all"
+  },
+  "cart": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    0,
+    3,
+    2,
+    2
+   ],
+   "solid": "all"
+  },
+  "footprints": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloorDetail.png",
+   "rect": [
+    9,
+    0,
+    1,
+    1
+   ],
+   "solid": "none",
+   "note": "Goblin tracks"
+  },
+  "twigs": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloorDetail.png",
+   "rect": [
+    6,
+    0,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "claw_marks": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloorDetail.png",
+   "rect": [
+    8,
+    0,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "bone": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloorDetail.png",
+   "rect": [
+    14,
+    0,
+    1,
+    1
+   ],
+   "solid": "none"
+  },
+  "skull": {
+   "sheet": "Backgrounds/Tilesets/TilesetFloorDetail.png",
+   "rect": [
+    13,
+    0,
+    1,
+    1
+   ],
+   "solid": "none"
+  }
+ },
+ "fx": {
+  "slash": {
+   "src": "FX/Attack/Cut/SpriteSheet.png",
+   "frame_w": 32
+  },
+  "slash_double": {
+   "src": "FX/Attack/CutDouble/SpriteSheet.png",
+   "frame_w": 32
+  },
+  "claw": {
+   "src": "FX/Attack/Claw/SpriteSheet.png",
+   "frame_w": 32
+  },
+  "explosion": {
+   "src": "FX/Elemental/Explosion/SpriteSheet.png",
+   "frame_w": 40
+  },
+  "flame": {
+   "src": "FX/Elemental/Flam/SpriteSheet.png",
+   "frame_w": 25
+  },
+  "ice_burst": {
+   "src": "FX/Elemental/Ice/SpriteSheetB.png",
+   "frame_w": 32
+  },
+  "thunder": {
+   "src": "FX/Elemental/Thunder/SpriteSheet.png",
+   "frame_w": 20
+  },
+  "aura": {
+   "src": "FX/Magic/Aura/SpriteSheet.png",
+   "frame_w": 25
+  },
+  "shield_blue": {
+   "src": "FX/Magic/Shield/SpriteSheetBlue.png",
+   "frame_w": 24
+  },
+  "shield_gold": {
+   "src": "FX/Magic/Shield/SpriteSheetYellow.png",
+   "frame_w": 24
+  },
+  "spark": {
+   "src": "FX/Magic/Spark/SpriteSheet.png",
+   "frame_w": 30
+  },
+  "circle_spark": {
+   "src": "FX/Magic/Circle/SpriteSheetSpark.png",
+   "frame_w": 32
+  },
+  "circle_white": {
+   "src": "FX/Magic/Circle/SpriteSheetWhite.png",
+   "frame_w": 32
+  },
+  "boost": {
+   "src": "FX/Magic/Boost/SpriteSheet.png",
+   "frame_w": 53
+  },
+  "smoke": {
+   "src": "FX/Smoke/Smoke/SpriteSheet.png",
+   "frame_w": 32
+  },
+  "proj_fireball": {
+   "src": "FX/Projectile/Fireball.png",
+   "frame_w": 16
+  },
+  "proj_energy": {
+   "src": "FX/Projectile/EnergyBall.png",
+   "frame_w": 16
+  },
+  "proj_big_energy": {
+   "src": "FX/Projectile/BigEnergyBall.png",
+   "frame_w": 24
+  },
+  "proj_ice": {
+   "src": "FX/Projectile/IceSpike.png",
+   "frame_w": 36
+  },
+  "proj_arrow": {
+   "src": "FX/Projectile/Arrow.png",
+   "frame_w": 13
+  }
+ },
+ "spell_fx": {
+  "_presets": "projectile: missile from caster to target then impact; burst: impact on each target; beam: fast projectile; buff: aura on targets; heal: sparkle on targets",
+  "fire_bolt": {
+   "preset": "projectile",
+   "projectile": "proj_fireball",
+   "impact": "explosion",
+   "sfx": [
+    "fireball",
+    "explosion"
+   ]
+  },
+  "ray_of_frost": {
+   "preset": "beam",
+   "projectile": "proj_ice",
+   "impact": "ice_burst",
+   "sfx": [
+    "magic",
+    "ice"
+   ]
+  },
+  "shocking_grasp": {
+   "preset": "burst",
+   "impact": "thunder",
+   "sfx": [
+    "thunder"
+   ]
+  },
+  "sacred_flame": {
+   "preset": "burst",
+   "impact": "flame",
+   "tint": "#f2c94c",
+   "sfx": [
+    "holy"
+   ]
+  },
+  "magic_missile": {
+   "preset": "projectile",
+   "projectile": "proj_energy",
+   "impact": "circle_white",
+   "count_from": "darts",
+   "sfx": [
+    "magic",
+    "hit_magic"
+   ]
+  },
+  "burning_hands": {
+   "preset": "burst",
+   "impact": "flame",
+   "sfx": [
+    "fire"
+   ]
+  },
+  "thunderwave": {
+   "preset": "burst",
+   "impact": "circle_white",
+   "sfx": [
+    "explosion"
+   ]
+  },
+  "guiding_bolt": {
+   "preset": "projectile",
+   "projectile": "proj_big_energy",
+   "impact": "spark",
+   "sfx": [
+    "holy",
+    "explosion"
+   ]
+  },
+  "cure_wounds": {
+   "preset": "heal",
+   "impact": "circle_spark",
+   "sfx": [
+    "heal"
+   ]
+  },
+  "healing_word": {
+   "preset": "heal",
+   "impact": "circle_spark",
+   "sfx": [
+    "heal"
+   ]
+  },
+  "bless": {
+   "preset": "buff",
+   "impact": "aura",
+   "tint": "#f2c94c",
+   "sfx": [
+    "buff"
+   ]
+  },
+  "shield": {
+   "preset": "buff",
+   "impact": "shield_blue",
+   "sfx": [
+    "shield"
+   ]
+  },
+  "shield_of_faith": {
+   "preset": "buff",
+   "impact": "shield_gold",
+   "sfx": [
+    "shield"
+   ]
+  },
+  "mage_armor": {
+   "preset": "buff",
+   "impact": "shield_blue",
+   "sfx": [
+    "shield"
+   ]
+  },
+  "sanctuary": {
+   "preset": "buff",
+   "impact": "shield_gold",
+   "sfx": [
+    "buff"
+   ]
+  },
+  "guidance": {
+   "preset": "buff",
+   "impact": "boost",
+   "sfx": [
+    "buff"
+   ]
+  },
+  "resistance": {
+   "preset": "buff",
+   "impact": "boost",
+   "sfx": [
+    "buff"
+   ]
+  },
+  "spare_the_dying": {
+   "preset": "heal",
+   "impact": "spark",
+   "sfx": [
+    "heal"
+   ]
+  },
+  "_default": {
+   "preset": "burst",
+   "impact": "spark",
+   "sfx": [
+    "magic"
+   ]
+  },
+  "second_wind": {
+   "preset": "heal",
+   "impact": "boost",
+   "sfx": [
+    "buff"
+   ]
+  },
+  "potion_of_healing": {
+   "preset": "heal",
+   "impact": "circle_spark",
+   "sfx": [
+    "heal"
+   ]
+  }
+ },
+ "music": {
+  "village": "Audio/Musics/36 - Village.ogg",
+  "calm_village": "Audio/Musics/33 - Calm Village.ogg",
+  "road": "Audio/Musics/23 - Road.ogg",
+  "adventure": "Audio/Musics/35 - Adventure.ogg",
+  "tension": "Audio/Musics/28 - Tension.ogg",
+  "battle": "Audio/Musics/17 - Fight.ogg",
+  "battle_boss": "Audio/Musics/34  - Fight.ogg",
+  "dark_forest": "Audio/Musics/37 - Dark Forest.ogg",
+  "dungeon": "Audio/Musics/21 - Dungeon.ogg",
+  "sad": "Audio/Musics/7 - Sad Theme.ogg",
+  "mystical": "Audio/Musics/13 - Mystical.ogg",
+  "theme": "Audio/Musics/1 - Adventure Begin.ogg"
+ },
+ "sfx": {
+  "hit": "Audio/Sounds/Hit & Impact/Hit1.wav",
+  "hit_heavy": "Audio/Sounds/Hit & Impact/Impact.wav",
+  "hit_magic": "Audio/Sounds/Hit & Impact/Hit5.wav",
+  "crit": "Audio/Sounds/Hit & Impact/Impact3.wav",
+  "miss": "Audio/Sounds/Whoosh & Slash/Whoosh.wav",
+  "slash": "Audio/Sounds/Whoosh & Slash/Slash.wav",
+  "arrow": "Audio/Sounds/Whoosh & Slash/Launch.wav",
+  "fireball": "Audio/Sounds/Elemental/Fireball.wav",
+  "fire": "Audio/Sounds/Elemental/Fire.wav",
+  "explosion": "Audio/Sounds/Elemental/Explosion.wav",
+  "ice": "Audio/Sounds/Elemental/Water4.wav",
+  "thunder": "Audio/Sounds/Elemental/Explosion3.wav",
+  "magic": "Audio/Sounds/Magic & Skill/Magic1.wav",
+  "holy": "Audio/Sounds/Magic & Skill/Magic3.wav",
+  "heal": "Audio/Sounds/Magic & Skill/Heal.wav",
+  "buff": "Audio/Sounds/Magic & Skill/Fx.wav",
+  "shield": "Audio/Sounds/Magic & Skill/Magic4.wav",
+  "faint": "Audio/Sounds/Jump & Bounce/Bounce3.wav",
+  "dice_roll": "Audio/Sounds/Menu/Move3.wav",
+  "dice_land": "Audio/Sounds/Menu/Accept.wav",
+  "nat20": "Audio/Jingles/Secret1.wav",
+  "nat1": "Audio/Jingles/GameOver2.wav",
+  "alert": "Audio/Sounds/Alert/Alert.wav",
+  "lantern_out": "Audio/Sounds/Magic & Skill/Strange.wav",
+  "transition": "Audio/Sounds/Menu/Menu10.wav",
+  "victory": "Audio/Jingles/Success1.wav",
+  "level_up": "Audio/Jingles/LevelUp1.wav",
+  "footstep": "Audio/Sounds/Menu/Move1.wav",
+  "wind": "Audio/Sounds/Ambient/Wind.wav"
+ },
+ "fonts": {
+  "text": {
+   "file": "vendor/fonts/PixelifySans.ttf",
+   "size": 12,
+   "license": "OFL-1.1"
+  },
+  "small": {
+   "file": "vendor/fonts/Tiny5-Regular.ttf",
+   "size": 10,
+   "license": "OFL-1.1"
+  },
+  "title": {
+   "file": "vendor/fonts/Tiny5-Regular.ttf",
+   "size": 20,
+   "license": "OFL-1.1"
+  }
+ },
+ "ui": {
+  "dialog_face": "Ui/Dialog/DialogBoxFaceset.png",
+  "dialog_plain": "Ui/Dialog/DialogueBoxSimple.png",
+  "arrow": "Ui/Arrow.png",
+  "emotes": {
+   "neutral": 5,
+   "happy": 6,
+   "smile": 11,
+   "sad": 16,
+   "shock": 15,
+   "sweat": 18,
+   "dots": 20,
+   "exclaim": 21,
+   "alert": 22,
+   "question": 23,
+   "question_red": 25,
+   "heartbreak": 26,
+   "love": 27,
+   "angry": 29,
+   "plus": 30
+  }
+ }
+}

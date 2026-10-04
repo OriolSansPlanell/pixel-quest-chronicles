@@ -1,0 +1,37 @@
+site_name: Pixel Quest Chronicles - Wiki
+site_description: Lore, characters and every dice roll of a daily pixel-art D&D story.
+docs_dir: docs
+site_dir: ../site
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle: {icon: material/weather-sunny, name: Light mode}
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle: {icon: material/weather-night, name: Dark mode}
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+nav:
+  - Home: index.md
+  - Episodes: episodes/index.md
+  - The party: characters/index.md
+  - People: npcs/index.md
+  - Places: places/index.md
+  - Quotes: quotes.md
+  - The Lantern Road: lanterns.md
+  - Quests: quests.md
+  - Dice: dice.md
+  - About: about.md
+markdown_extensions:
+  - tables
+  - md_in_html
+  - attr_list
+  - admonition
+plugins:
+  - search
