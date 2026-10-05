@@ -9,7 +9,7 @@
   "class": "rogue",
   "subclass": null,
   "level": 1,
-  "xp": 210,
+  "xp": 142,
   "background": "criminal",
   "deity": "quill",
   "base_scores": {
@@ -34,7 +34,7 @@
   },
   "hp": {
     "max": 10,
-    "current": 10,
+    "current": 6,
     "temp": 0
   },
   "hit_dice": {
@@ -111,7 +111,7 @@
   "inventory": [
     {
       "id": "arrows",
-      "qty": 10
+      "qty": 16
     },
     {
       "id": "dagger",

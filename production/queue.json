@@ -183,7 +183,10 @@
    "after": [
     "episode:8"
    ],
-   "status": "todo"
+   "status": "done",
+   "started_at": "2026-10-05T08:04:54+00:00",
+   "done_at": "2026-10-05T08:09:53+00:00",
+   "note": "Smoke Over the Millpond, 7.2 min"
   },
   {
    "id": "map:fort_harrow",

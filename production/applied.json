@@ -156,5 +156,14 @@
    "episode 8 committed"
   ],
   "at": "20261005T092052Z"
+ },
+ "change-20261005T080953Z-shift-20261005-0648-019": {
+  "status": "applied",
+  "message": "Episode 9: Smoke Over the Millpond (part 2/2)",
+  "session": "shift-20261005-0648",
+  "did": [
+   "episode 9 committed"
+  ],
+  "at": "20261005T092118Z"
  }
 }

@@ -3,14 +3,14 @@
   "clock": {
     "year": 1047,
     "month": 9,
-    "day": 7,
+    "day": 6,
     "hearthday": null,
-    "time_of_day": "morning"
+    "time_of_day": "noon"
   },
   "series": {
     "campaign": 1,
-    "episode": 9,
-    "episode_in_campaign": 9,
+    "episode": 8,
+    "episode_in_campaign": 8,
     "phase": "campaign",
     "interlude": null
   },
@@ -81,13 +81,7 @@
         ]
       }
     ],
-    "shared_inventory": [
-      {
-        "id": "goblin_boss_helmet",
-        "qty": 1,
-        "name": "Goblin boss's helmet with a strip of lantern-glass riveted to it"
-      }
-    ],
+    "shared_inventory": [],
     "shared_money_cp": 0,
     "reputation_title": null
   },
@@ -264,26 +258,14 @@
     },
     "npc.ned-hollis": {
       "status": "alive",
-      "attitude": "helpful",
-      "location": "loc.wending-mill",
-      "first_seen": "C01-E008",
-      "last_seen": "C01-E009",
-      "notes": [
-        "Old miller of Wending Mill; barricaded the villagers in the watermill when goblins attacked (C01-E008).",
-        "Gave the party his hearth for the night after the fight at the barn."
-      ],
-      "name": "Ned Hollis"
-    },
-    "npc.bet-hollis": {
-      "status": "alive",
       "attitude": "friendly",
       "location": "loc.wending-mill",
-      "first_seen": "C01-E009",
-      "last_seen": "C01-E009",
+      "first_seen": "C01-E008",
+      "last_seen": "C01-E008",
       "notes": [
-        "Ned Hollis's wife; pulled out of the burning barn at Wending Mill (C01-E009)."
+        "Old miller of Wending Mill; barricaded the villagers in the watermill when goblins attacked (C01-E008)."
       ],
-      "name": "Bet Hollis"
+      "name": "Ned Hollis"
     }
   },
   "quests": [
@@ -356,8 +338,7 @@
     "brannoc_knows_oriel_fears_the_dark": true,
     "waymarker_old_road": true,
     "dead_cores_on_shrine_altar": true,
-    "wending_mill_barn_burning": true,
-    "wending_mill_saved": true
+    "wending_mill_barn_burning": true
   },
   "hooks": [
     {

@@ -2,9 +2,9 @@
 
 A pixel-art Dungeons & Dragons story, one episode every weekday. Four strangers, one road of lanterns, level 1 to level 20. **Every roll you see on screen is real**: the dice are seeded and logged, and you can check any of them on the [Dice](dice.md) page.
 
-## Latest episode: [C1E8 - Wending Mill](episodes/c01-e008.md)
+## Latest episode: [C1E9 - Smoke Over the Millpond](episodes/c01-e009.md)
 
-On 6 Emberfall the party walked south to answer Captain Rook's letter. Pell spotted goblins battering the door of the watermill at Wending Mill, and the four ran the last stretch and fought four goblins in the mill yard; Brannoc and Tamsin were both badly cut before Tamsin's blade and Ilsevel's spells ended it. The miller, Ned Hollis, said the goblins wanted the grain because 'the boss wants meal'. Then they saw smoke: the barn was burning, barred from outside, with Ned's wife Bet and a hired lad inside, and something behind the smoke had stopped shouting.
+At Wending Mill on 6 Emberfall, Brannoc heaved the bar off the burning barn's doors and Bet Hollis and a hired lad came out; the lad had breathed too much smoke, and Oriel was still tending him when a goblin boss with lantern-glass riveted to his helmet walked out of the smoke with two of his crew. With no spells left but cantrips, the party fought: the boss cut Oriel down, Brannoc killed the goblin and then held the boss alone while Oriel fought her way back to stable, and Ilsevel's fire bolt finally dropped the boss. Brannoc tended Oriel himself. The barn burned, but the mill was saved.
 
 ## The party
 
@@ -13,4 +13,4 @@ On 6 Emberfall the party walked south to answer Captain Rook's letter. Pell spot
 - **[Tamsin Underbough](characters/tamsin.md)** - The Card Player. Level 1 halfling rogue.
 - **[Oriel Ashdown](characters/oriel.md)** - The Acolyte. Level 1 human cleric.
 
-*In-world date: 6 Emberfall 1047 AK. Episodes so far: 8.*
+*In-world date: 7 Emberfall 1047 AK. Episodes so far: 9.*

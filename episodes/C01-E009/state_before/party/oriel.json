@@ -9,7 +9,7 @@
   "class": "cleric",
   "subclass": null,
   "level": 1,
-  "xp": 210,
+  "xp": 142,
   "background": "acolyte",
   "deity": "aurelan",
   "base_scores": {
@@ -118,7 +118,7 @@
     "slots": {
       "1": {
         "max": 2,
-        "current": 2
+        "current": 0
       }
     },
     "free_casts": {
@@ -162,11 +162,7 @@
   "heroic_inspiration": true,
   "dossier": "dossiers/oriel.md",
   "level_history": [],
-  "conditions": {
-    "prone": {
-      "source": "0hp"
-    }
-  },
+  "conditions": {},
   "effects": [],
   "exhaustion": 0,
   "death_saves": {
@@ -175,5 +171,5 @@
   },
   "stable": false,
   "dead": false,
-  "concentration": null
+  "concentration": "bless"
 }
