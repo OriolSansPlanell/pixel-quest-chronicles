@@ -393,14 +393,143 @@ def start_pos(fmt: str, shots: list[dict], formats, fps: int, group: list[dict],
     return out
 
 
+
+# ------------------------------------------------------------ thumbnails
+def scene_frame(ep: int, cue: int, offset: float, assets: Assets, reading: dict | None = None):
+    """The clean 480x270 scene `offset` seconds into a cue, plus the stage (for actor positions)."""
+    d = ROOT / "episodes" / f"C01-E{ep:03d}"
+    tl = json.loads((d / "timeline.json").read_text())
+    if reading:
+        tl = {**tl, "reading": {**tl.get("reading", {}), **reading}}
+    r = Runner(tl, assets)
+    frame = None
+    for _ in r.frames(render=False):
+        if len(r.cue_times) > cue and r.stage.t >= r.cue_times[cue] + offset:
+            frame = r.stage.render(clean=True)
+            break
+    return frame or r.stage.render(clean=True), r.stage
+
+
+def zoomed(frame: Image.Image, st, focus: str | None, size: tuple[int, int], scale: int = 4) -> Image.Image:
+    """Crop a (size/scale) window around the focus actor and scale it up."""
+    w, h = size[0] // scale, size[1] // scale
+    fx, fy = W_W / 2, W_H / 2
+    if focus and focus in st.actors:
+        cx, cy = st._camera()
+        fx, fy = (st.actors[focus].x - cx) * 2, (st.actors[focus].y - cy) * 2 - 10
+    x0 = int(min(max(fx - w / 2, 0), W_W - w))
+    y0 = int(min(max(fy - h / 2, 0), W_H - h))
+    return frame.convert("RGBA").crop((x0, y0, x0 + w, y0 + h)).resize(size, Image.NEAREST)
+
+
+def outline_text(d: ImageDraw.ImageDraw, xy, text, font, fill, step: int = 7):
+    x, y = xy
+    for dx in range(-step, step + 1, step):
+        for dy in range(-step, step + 1, step):
+            d.text((x + dx, y + dy), text, font=font, fill=(20, 27, 27))
+    d.text((x, y), text, font=font, fill=fill)
+
+
+def trailer_thumbnails(spec: dict, out_dir: Path, assets: Assets | None = None) -> list[Path]:
+    """Two thumbnails: 1280x720 for the trailer, 1080x1920 for the Short."""
+    from pqc.render import brand
+
+    assets = assets or Assets()
+    th = spec.get("thumbnail", {})
+    party = th.get("faces", ["brannoc", "ilsevel", "tamsin", "oriel"])
+    text = th.get("text", "EVERY ROLL IS REAL.")
+    frame, st = scene_frame(th.get("ep", 9), th.get("cue", 75), th.get("offset", 0.9), assets, spec.get("reading"))
+    gold = (255, 214, 102)
+    out = []
+
+    def faces_row(width_avail: int):
+        fs = 6
+        while 38 * fs * len(party) + 20 * (len(party) - 1) > width_avail:
+            fs -= 1
+        row = Image.new("RGBA", (38 * fs * len(party) + 20 * (len(party) - 1) + 16, 38 * fs + 16), (0, 0, 0, 0))
+        x = 0
+        for who in party:
+            face = assets.actor(who).faceset.resize((38 * fs, 38 * fs), Image.NEAREST)
+            card = Image.new("RGBA", (face.width + 16, face.height + 16), (20, 27, 27, 255))
+            ImageDraw.Draw(card).rectangle((0, 0, card.width - 1, card.height - 1), outline=brand.MID, width=6)
+            card.alpha_composite(face, (8, 8))
+            row.alpha_composite(card, (x, 0))
+            x += face.width + 20
+        return row
+
+    # 16:9 -------------------------------------------------------------
+    img = zoomed(frame, st, th.get("focus", "brannoc"), (1280, 720))
+    shade = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(shade)
+    for y in range(200, 720):
+        d.line([(0, y), (1280, y)], fill=(8, 10, 14, int(225 * (y - 200) / 520)))
+    img.alpha_composite(shade)
+    d = ImageDraw.Draw(img)
+    d.rectangle((0, 0, 1279, 719), outline=brand.MID, width=6)
+    d.rectangle((6, 6, 1273, 713), outline=(20, 27, 27, 255), width=4)
+    row = faces_row(1100)
+    img.alpha_composite(row, ((1280 - row.width) // 2, 240))
+    big = assets.font_at("title", 112)
+    while d.textlength(text, font=big) > 1160:
+        big = assets.font_at("title", big.size - 6)
+    tw = d.textlength(text, font=big)
+    outline_text(d, ((1280 - tw) / 2, 540), text, big, gold)
+    mark = brand.d20_mark(assets, 2)
+    small = assets.font_at("title", 36)
+    label = th.get("label", "TRAILER")
+    lw = d.textlength(label, font=small)
+    d.rounded_rectangle((40, 40, 40 + mark.width + 24 + lw + 28, 40 + mark.height + 8), 14, fill=(20, 27, 27, 235),
+                        outline=brand.MID, width=3)
+    img.alpha_composite(mark, (52, 44))
+    draw_text(d, (52 + mark.width + 16, 44 + (mark.height - 36) // 2), label, small, WHITE)
+    word = brand.wordmark(assets, 2)
+    d.rounded_rectangle((1280 - word.width - 72, 40, 1280 - 40, 48 + word.height + 8), 14, fill=(20, 27, 27, 235),
+                        outline=brand.MID, width=3)
+    img.alpha_composite(word, (1280 - word.width - 56, 52))
+    p = out_dir / f"{spec['id']}_thumbnail_16x9.png"
+    img.convert("RGB").save(p)
+    out.append(p)
+
+    # 9:16 -------------------------------------------------------------
+    img = Image.new("RGBA", (1080, 1920), brand.BG)
+    logo = brand.lockup(assets, stacked=True, scale=5)
+    img.alpha_composite(logo, ((1080 - logo.width) // 2, 70))
+    scene = zoomed(frame, st, th.get("focus", "brannoc"), (1080, 900))
+    img.alpha_composite(scene, (0, 470))
+    d = ImageDraw.Draw(img)
+    d.rectangle((0, 470, 1079, 1369), outline=brand.MID, width=6)
+    row = faces_row(1000)
+    img.alpha_composite(row, ((1080 - row.width) // 2, 1370 - row.height // 2))
+    big = assets.font_at("title", 120)
+    lines = text.split(" ", 2)
+    lines = [" ".join(lines[:2]), " ".join(lines[2:])] if len(lines) > 2 else [text]
+    y = 1370 + row.height // 2 + 50
+    for line in lines:
+        f = big
+        while d.textlength(line, font=f) > 1000:
+            f = assets.font_at("title", f.size - 6)
+        outline_text(d, ((1080 - d.textlength(line, font=f)) / 2, y), line, f, gold)
+        y += 126
+    p = out_dir / f"{spec['id']}_thumbnail_9x16.png"
+    img.convert("RGB").save(p)
+    out.append(p)
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("spec")
     ap.add_argument("out_dir")
     ap.add_argument("--only", choices=["wide", "vertical"])
     ap.add_argument("--preview", action="store_true")
+    ap.add_argument("--thumbnails", action="store_true", help="only make the two thumbnails")
     a = ap.parse_args()
     spec = json.loads(Path(a.spec).read_text())
+    Path(a.out_dir).mkdir(parents=True, exist_ok=True)
+    if a.thumbnails:
+        for p in trailer_thumbnails(spec, Path(a.out_dir)):
+            print(p)
+        return 0
     build(spec, Path(a.out_dir), a.only, a.preview)
     return 0
 

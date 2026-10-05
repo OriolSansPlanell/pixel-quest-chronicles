@@ -2,6 +2,7 @@
   "schema": "pqc/trailer@1",
   "id": "trailer_c01",
   "title": "Nat 20 Pixels - Campaign 1 trailer",
+  "thumbnail": {"ep": 9, "cue": 75, "offset": 0.9, "focus": "brannoc", "text": "EVERY ROLL IS REAL.", "label": "TRAILER"},
   "reading": {"cps": 80, "hold_base": 0.4, "hold_per_char": 0.0},
   "music": [
     {"t": 0.0, "track": "tension", "volume": 0.5, "fade_in": 1.5},
