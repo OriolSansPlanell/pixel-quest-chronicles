@@ -39,5 +39,14 @@
   "reason": "episode 2 did not complete:\nFAILED: Can't commit C01-E002: the live state is at C1E2\n",
   "message": "Episode 2: The Goblin Who Talked (part 2/2)",
   "at": "20261005T090245Z"
+ },
+ "change-20261005T071009Z-shift-20261005-0648-005": {
+  "status": "applied",
+  "message": "map:crooked_kettle_interior: inn common room and storeroom",
+  "session": "shift-20261005-0648",
+  "did": [
+   "map crooked_kettle_interior regenerated"
+  ],
+  "at": "20261005T090314Z"
  }
 }

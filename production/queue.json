@@ -22,8 +22,8 @@
    "status": "done",
    "spec": "Brindle Cross only (inn exterior/square). If map:crooked_kettle_interior is done first, use it for the questioning scene.",
    "started_at": "2026-10-05T06:49:02+00:00",
-   "done_at": "2026-10-05T08:56:05+00:00",
-   "note": "The Goblin Who Talked, 7.9 min (committed by the setup session: the shift's final bundle never reached Drive)"
+   "done_at": "2026-10-05T07:00:05+00:00",
+   "note": "The Goblin Who Talked, 7.9 min"
   },
   {
    "id": "map:crooked_kettle_interior",
@@ -33,9 +33,12 @@
     7
    ],
    "after": [],
-   "status": "todo",
+   "status": "done",
    "optional": true,
-   "spec": "Interior of the Crooked Kettle inn: common room with hearth, tables, bar, stairs, a back storeroom where Rusk is held. Use Backgrounds/Tilesets/Interior/* (floor, walls, furniture) and TilesetElement furniture. Needs an interior floor/wall approach: a new terrain entry or a 'floor' base plus wall props. Only build it if it can be done well; it is optional."
+   "spec": "Interior of the Crooked Kettle inn: common room with hearth, tables, bar, stairs, a back storeroom where Rusk is held. Use Backgrounds/Tilesets/Interior/* (floor, walls, furniture) and TilesetElement furniture. Needs an interior floor/wall approach: a new terrain entry or a 'floor' base plus wall props. Only build it if it can be done well; it is optional.",
+   "started_at": "2026-10-05T07:09:05+00:00",
+   "done_at": "2026-10-05T07:09:05+00:00",
+   "note": "Common room (hearth, bar, three tables, stairs, front door) and back storeroom through a doorway; walls from Interior/TilesetWallSimple, wood floor terrain floor_wood"
   },
   {
    "id": "episode:3",

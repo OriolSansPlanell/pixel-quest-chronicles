@@ -282,6 +282,15 @@
     11,
     7
    ]
+  },
+  "floor_wood": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png",
+   "fill": [
+    [
+     12,
+     2
+    ]
+   ]
   }
  },
  "props": {
@@ -605,6 +614,328 @@
     1
    ],
    "solid": "none"
+  },
+  "wall_tl": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    5,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_top": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    8,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_top_end_r": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    6,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_top_end_l": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    7,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_tr": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    9,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_left": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    5,
+    1,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_left_end_b": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    5,
+    2,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_left_end_t": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    5,
+    3,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_bl": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    5,
+    4,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_bottom": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    8,
+    4,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_bottom_end_r": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    6,
+    4,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_bottom_end_l": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    7,
+    4,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_br": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    9,
+    4,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_right": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    9,
+    1,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_right_end_b": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    9,
+    2,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "wall_right_end_t": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    9,
+    3,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "pillar_round": {
+   "sheet": "Backgrounds/Tilesets/Interior/TilesetWallSimple.png",
+   "rect": [
+    7,
+    1,
+    2,
+    2
+   ],
+   "solid": "all"
+  },
+  "table_long": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    2,
+    10,
+    3,
+    1
+   ],
+   "solid": "all"
+  },
+  "chair": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    1,
+    9,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "stool": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    11,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "bookshelf": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    8,
+    7,
+    2,
+    2
+   ],
+   "solid": "all"
+  },
+  "dresser": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    6,
+    7,
+    2,
+    2
+   ],
+   "solid": "all"
+  },
+  "hearth": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    7,
+    2,
+    1,
+    1
+   ],
+   "solid": "all",
+   "light": {
+    "radius": 60,
+    "offset": [
+     8,
+     10
+    ]
+   },
+   "note": "Small brick oven used as the inn hearth"
+  },
+  "brazier": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    8,
+    1,
+    1,
+    1
+   ],
+   "solid": "all",
+   "light": {
+    "radius": 40,
+    "offset": [
+     8,
+     6
+    ]
+   }
+  },
+  "candle": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    6,
+    4,
+    1,
+    1
+   ],
+   "solid": "all",
+   "light": {
+    "radius": 26,
+    "offset": [
+     8,
+     4
+    ]
+   }
+  },
+  "cauldron": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    2,
+    9,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "vase": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    0,
+    10,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "sack": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    0,
+    5,
+    1,
+    2
+   ],
+   "solid": "base"
+  },
+  "stairs_up": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    6,
+    11,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "bench_long": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    11,
+    1,
+    3,
+    1
+   ],
+   "solid": "all"
   }
  },
  "fx": {
