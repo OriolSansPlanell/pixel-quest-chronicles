@@ -227,7 +227,7 @@ def run_episode(cfg: EpisodeConfig, log=print) -> dict:
     # 5. Measure, render ----------------------------------------------------
     from ..render.assets import Assets
     from ..render.timeline import Runner
-    from .packaging import chapters, full_description, render_thumbnail, thumbnail_time
+    from .packaging import chapters, full_description, render_thumbnail, thumbnail_spec, thumbnail_time
     assets = Assets()
     runner = Runner(tl, assets)
     duration = runner.duration()
@@ -296,7 +296,7 @@ def run_episode(cfg: EpisodeConfig, log=print) -> dict:
     save_json(out / "packaging.json", pk_full)
     t_thumb = thumbnail_time(pk.get("thumbnail_moment"), tl, runner.cue_times, plan)
     render_thumbnail(tl, t_thumb, pk["thumbnail_text"], f"CAMPAIGN {cfg.campaign}  -  EPISODE {cfg.episode}", out / "thumbnail.png",
-                     assets)
+                     assets, spec=thumbnail_spec(record["id"]))
 
     # 8. Archive, cost, state, wiki ---------------------------------------------
     save_json(out / "episode.json", record)

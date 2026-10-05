@@ -6,6 +6,7 @@ the timeline, the seed and the dice-verification line, and the licence credits.
 """
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from ..state import ROOT
@@ -78,14 +79,50 @@ def thumbnail_time(moment: str | None, timeline: dict, cue_times: list[float], p
     return cue_times[len(cue_times) // 2]
 
 
-def render_thumbnail(timeline: dict, t: float, text: str, episode_label: str, out: Path, assets=None) -> Path:
-    """Render the frame at ``t``, upscale to 1280x720 and add the title text."""
+THUMB_SPECS = ROOT / "assets" / "thumbnails"
+
+
+def thumbnail_spec(episode_id: str) -> dict:
+    """Hand-tuned choices for an episode's thumbnail (assets/thumbnails/c01.json):
+    ``text`` (overrides the packager's), ``faces`` (actor ids whose portraits are shown),
+    ``focus`` (actor the scene zooms on) and ``t`` (frame time, overrides the moment)."""
+    f = THUMB_SPECS / f"{episode_id[:3].lower()}.json"
+    if not f.exists():
+        return {}
+    return json.loads(f.read_text()).get(episode_id, {})
+
+
+def _split_title(d, text: str, font, width: int) -> list[str]:
+    words = text.split()
+    if d.textlength(text, font=font) <= width or len(words) < 2:
+        return [text]
+    best = None
+    for k in range(1, len(words)):
+        a, b = " ".join(words[:k]), " ".join(words[k:])
+        wa, wb = d.textlength(a, font=font), d.textlength(b, font=font)
+        if wa <= width and wb <= width:
+            score = abs(wa - wb)
+            if best is None or score < best[0]:
+                best = (score, [a, b])
+    return best[1] if best else [text]
+
+
+def render_thumbnail(timeline: dict, t: float, text: str, episode_label: str, out: Path, assets=None,
+                     spec: dict | None = None) -> Path:
+    """1280x720 thumbnail: the scene zoomed in on the moment, the episode's faces as big
+    portraits on the right, two to four big words bottom-left, and the channel badge."""
     from PIL import Image, ImageDraw
 
+    from ..render import brand
     from ..render.assets import Assets
     from ..render.timeline import Runner
+    from ..render.ui import draw_text
 
     assets = assets or Assets()
+    spec = spec or {}
+    text = spec.get("text", text)
+    if "t" in spec:
+        t = float(spec["t"])
     r = Runner(timeline, assets)
     target = int(t * r.stage.fps)
     frame = None
@@ -95,28 +132,75 @@ def render_thumbnail(timeline: dict, t: float, text: str, episode_label: str, ou
             break
     if frame is None:
         frame = r.stage.render(clean=True)
-    img = frame.convert("RGB").resize((1440, 810), Image.NEAREST).crop((80, 45, 1360, 765))
-    # Darken the lower third for the text.
+    st = r.stage
+    # Zoom: a 320x180 window of the 480x270 canvas around the focus, scaled 4x.
+    fx, fy = 240, 135
+    focus = spec.get("focus")
+    if focus in st.actors and st.actors[focus].visible:
+        cx, cy = st._camera()
+        fx, fy = (st.actors[focus].x - cx) * 2, (st.actors[focus].y - cy) * 2 - 10
+    x0 = int(min(max(fx - 160, 0), 480 - 320))
+    y0 = int(min(max(fy - 90, 0), 270 - 180))
+    img = frame.convert("RGBA").crop((x0, y0, x0 + 320, y0 + 180)).resize((1280, 720), Image.NEAREST)
+    # Shade: darker to the bottom-left so the text reads, and a thin frame.
     shade = Image.new("RGBA", img.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(shade)
-    for y in range(400, 720):
-        d.line([(0, y), (1280, y)], fill=(10, 8, 20, int(190 * (y - 400) / 320)))
-    img = Image.alpha_composite(img.convert("RGBA"), shade)
+    for y in range(300, 720):
+        d.line([(0, y), (1280, y)], fill=(8, 10, 14, int(215 * (y - 300) / 420)))
+    img.alpha_composite(shade)
     d = ImageDraw.Draw(img)
-    big = assets.font_at("title", 120)
-    small = assets.font_at("text", 44)
+    d.rectangle((0, 0, 1279, 719), outline=brand.MID, width=6)
+    d.rectangle((6, 6, 1273, 713), outline=(20, 27, 27, 255), width=4)
+    # Portraits on the right.
+    faces = spec.get("faces", [])
+    px = 1280 - 60
+    fs = 7
+    for k, who in enumerate(reversed(faces)):
+        try:
+            face = assets.actor(who).faceset
+        except Exception:
+            face = None
+        if face is None:
+            continue
+        big = face.resize((38 * fs, 38 * fs), Image.NEAREST)
+        w = big.width
+        px -= w
+        py = 720 - w - 70 if len(faces) == 1 else 720 - w - 70 - (0 if k == 0 else 40)
+        if k:
+            px += 36
+        card = Image.new("RGBA", (w + 16, w + 16), (20, 27, 27, 255))
+        ImageDraw.Draw(card).rectangle((0, 0, w + 15, w + 15), outline=brand.MID, width=6)
+        card.alpha_composite(big, (8, 8))
+        img.alpha_composite(card, (px - 8, py - 8))
+        px -= 24
+    text_right = (px - 40) if faces else 1220
+    # Title: up to two lines of big gold letters with an ink outline.
     words = text.upper()
-    w = d.textlength(words, font=big)
-    if w > 1180:
-        big = assets.font_at("title", int(120 * 1180 / w))
-        w = d.textlength(words, font=big)
-    x, y = (1280 - w) / 2, 560
-    for dx in range(-6, 7, 3):
-        for dy in range(-6, 7, 3):
-            d.text((x + dx, y + dy), words, font=big, fill=(20, 12, 30))
-    d.text((x, y), words, font=big, fill=(255, 214, 102))
-    d.rounded_rectangle([28, 28, 28 + d.textlength(episode_label, font=small) + 36, 100], 12, fill=(20, 12, 30, 230))
-    d.text((46, 38), episode_label, font=small, fill=(240, 236, 220))
+    size = 132
+    while True:
+        big = assets.font_at("title", size)
+        lines = _split_title(d, words, big, text_right - 60)
+        if all(d.textlength(l, font=big) <= text_right - 60 for l in lines) or size <= 64:
+            break
+        size -= 8
+    lh = int(size * 1.05)
+    y = 720 - 60 - lh * len(lines)
+    for line in lines:
+        x = 60
+        for dx in range(-7, 8, 7):
+            for dy in range(-7, 8, 7):
+                d.text((x + dx, y + dy), line, font=big, fill=(20, 27, 27))
+        d.text((x, y), line, font=big, fill=(255, 214, 102))
+        y += lh
+    # Channel badge: the d20 mark and the episode number.
+    mark = brand.d20_mark(assets, 2)
+    small = assets.font_at("title", 36)
+    label = episode_label.split("-")[-1].strip() if "EPISODE" in episode_label else episode_label
+    lw = d.textlength(label, font=small)
+    d.rounded_rectangle((40, 40, 40 + mark.width + 24 + lw + 28, 40 + mark.height + 8), 14, fill=(20, 27, 27, 235),
+                        outline=brand.MID, width=3)
+    img.alpha_composite(mark, (52, 44))
+    draw_text(d, (52 + mark.width + 16, 44 + (mark.height - 36) // 2), label, small, (244, 242, 250, 255))
     out.parent.mkdir(parents=True, exist_ok=True)
     img.convert("RGB").save(out)
     return out

@@ -618,3 +618,19 @@ class TestBrand(unittest.TestCase):
         self.assertEqual(len(frames), 126)
         self.assertEqual(frames[0].size, (480, 270))
         self.assertEqual(len(list(br.outro_frames(a, (270, 480)))), 90)
+
+
+class TestThumbnailSpec(unittest.TestCase):
+    def test_specs_name_real_actors_and_split_titles(self):
+        from pqc.pipeline.packaging import _split_title, thumbnail_spec
+        from PIL import Image, ImageDraw, ImageFont
+        d = ImageDraw.Draw(Image.new("RGB", (10, 10)))
+        f = ImageFont.load_default()
+        self.assertEqual(_split_title(d, "RUN!", f, 1000), ["RUN!"])
+        self.assertEqual(_split_title(d, "THE LIGHT WAS TAKEN", f, 70), ["THE LIGHT", "WAS TAKEN"])
+        manifest = load_json(ROOT / "assets" / "manifest.json")["actors"]
+        for n in range(1, 11):
+            spec = thumbnail_spec(f"C01-E{n:03d}")
+            self.assertTrue(spec.get("text"))
+            for who in spec.get("faces", []) + [spec.get("focus")]:
+                self.assertIn(who, manifest, who)

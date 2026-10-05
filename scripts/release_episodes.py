@@ -45,7 +45,7 @@ def main() -> int:
         camp, ep = int(eid[1:3]), int(eid[-3:])
         if (camp, ep) > reached or not (d / "timeline.json").exists() or not (d / "packaging.json").exists():
             continue
-        digest = hashlib.sha256((d / "timeline.json").read_bytes()).hexdigest()
+        digest = hashlib.sha256((d / "timeline.json").read_bytes() + (d / "thumbnail.png").read_bytes()).hexdigest()
         have = release_state(eid)
         if have == digest:
             continue
