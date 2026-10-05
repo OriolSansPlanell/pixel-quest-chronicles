@@ -62,8 +62,11 @@
     6
    ],
    "after": [],
-   "status": "todo",
-   "spec": "Night forest south-east of Brindle Cross (bible 03: goblin territory, wolves, an old druid circle). One map, about 48x30, with three areas: (a) a birch clearing for the wolf fight (E4, needs open ground ~10x8), (b) a goblin scout camp with a cart carrying three dead lantern-cores, a tent, a fire pit (E5), (c) a sheltered campsite by an old Lamplighter way-marker for the party's night watch (E6). Dark forest floor (dirt_dark / grass), dense pine and dead trees as walls, a stream optional (TilesetWater). Named points for every scene mark."
+   "status": "done",
+   "spec": "Night forest south-east of Brindle Cross (bible 03: goblin territory, wolves, an old druid circle). One map, about 48x30, with three areas: (a) a birch clearing for the wolf fight (E4, needs open ground ~10x8), (b) a goblin scout camp with a cart carrying three dead lantern-cores, a tent, a fire pit (E5), (c) a sheltered campsite by an old Lamplighter way-marker for the party's night watch (E6). Dark forest floor (dirt_dark / grass), dense pine and dead trees as walls, a stream optional (TilesetWater). Named points for every scene mark.",
+   "started_at": "2026-10-05T07:31:20+00:00",
+   "done_at": "2026-10-05T07:31:20+00:00",
+   "note": "48x30 night forest: birch clearing (E4), goblin scout camp with cart of three dead cores (E5), campsite hollow by a Lamplighter way-marker (E6); trail forks at a stump"
   },
   {
    "id": "materials:woods",
@@ -74,8 +77,11 @@
     6
    ],
    "after": [],
-   "status": "todo",
-   "spec": "Props and sprites for E4-E6: Pell the owl (Ilsevel's familiar; the pack has no owl - pick the closest small bird/animal and recolour it brown with one white feather, or draw a 16x16 owl sprite sheet in the pack's style), a campfire prop with light (tileset_camp.png / Animated fire), a tent (tileset_camp.png), a goblin cart, a 'dead lantern-core' item prop (grey crystal), an old Lamplighter way-marker stone (stand-in allowed). Add each to assets/manifest.json with solid/light flags; check actor sprites load (tests/test_render)."
+   "status": "done",
+   "spec": "Props and sprites for E4-E6: Pell the owl (Ilsevel's familiar; the pack has no owl - pick the closest small bird/animal and recolour it brown with one white feather, or draw a 16x16 owl sprite sheet in the pack's style), a campfire prop with light (tileset_camp.png / Animated fire), a tent (tileset_camp.png), a goblin cart, a 'dead lantern-core' item prop (grey crystal), an old Lamplighter way-marker stone (stand-in allowed). Add each to assets/manifest.json with solid/light flags; check actor sprites load (tests/test_render).",
+   "started_at": "2026-10-05T07:31:20+00:00",
+   "done_at": "2026-10-05T07:31:20+00:00",
+   "note": "pell (pack owl recoloured brown), tent, tent_ragged, campfire (light), log_bench, stump_big, waymarker (stand-in), core_dead and cart_cores (small sprites under assets/sprites)"
   },
   {
    "id": "episode:4",
