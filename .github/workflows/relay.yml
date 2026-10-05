@@ -1,0 +1,47 @@
+# Apply the work of the scheduled Claude shifts. Shifts can't push to GitHub, so
+# they upload change bundles to the Google Drive production folder
+# (production/relay.json); every 10 minutes this job applies new ones in order
+# (scripts/relay.py: hash-checked, maps and episodes regenerated, tests run),
+# commits, pushes, and starts the wiki and release workflows.
+name: relay
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+permissions: {contents: write, actions: write}
+concurrency: {group: relay, cancel-in-progress: false}
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Any new bundles in Drive?
+        id: check
+        env: {DRIVE_API_KEY: "${{ secrets.DRIVE_API_KEY }}"}
+        run: python scripts/relay.py check-drive
+      - name: Install the renderer's dependencies and assets
+        if: steps.check.outputs.new != '0'
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          pip install pillow numpy
+          scripts/fetch_assets.sh
+      - name: Apply bundles
+        id: apply
+        if: steps.check.outputs.new != '0'
+        env: {DRIVE_API_KEY: "${{ secrets.DRIVE_API_KEY }}"}
+        run: |
+          git config user.name "pqc-relay"
+          git config user.email "pqc-relay@users.noreply.github.com"
+          python scripts/relay.py apply-drive
+          git push
+      - name: Rebuild the wiki
+        if: steps.apply.outputs.changed == 'true'
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: gh workflow run wiki.yml
+      - name: Render and release new episodes
+        if: steps.apply.outputs.episodes != '0' && steps.apply.outputs.episodes != ''
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: gh workflow run release.yml

@@ -416,3 +416,53 @@ class TestProductionQueue(unittest.TestCase):
                 prod.main(["done", "episode:2"])
                 self.assertIn("episode:3", [t["id"] for t in prod.ready(prod.load())])
                 self.assertNotIn("episode:4", [t["id"] for t in prod.ready(prod.load())])
+
+
+class TestRelay(unittest.TestCase):
+    """Change bundles: exact round trip, hash check, path rules."""
+
+    @classmethod
+    def setUpClass(cls):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("relay", ROOT / "scripts" / "relay.py")
+        cls.relay = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.relay)
+
+    def bundle(self, files: dict) -> str:
+        r = self.relay
+        with tempfile.TemporaryDirectory() as d:
+            with mock.patch.object(r, "ROOT", Path(d)):
+                for path, data in files.items():
+                    (Path(d) / path).parent.mkdir(parents=True, exist_ok=True)
+                    (Path(d) / path).write_bytes(data)
+                blocks, refused = r._encode([("M", p) for p in files])
+        self.assertEqual(refused, [])
+        return "PQC-CHANGE 1\nname: change-x\nmessage: t\nrun: episode_commit 2\n" + "".join(blocks) + "=== END\n"
+
+    def test_round_trip(self):
+        files = {"fixtures/C01-E002/plan.json": json.dumps({"a": "quote \" and\nnewline === x"}).encode(),
+                 "scripts/maps/x.py": b"print('hi')\n\n\n",
+                 "assets/sprites/pell.png": bytes(range(256))}
+        b = self.relay.parse(self.bundle(files))
+        got = {p: d for _, p, d in b["ops"]}
+        self.assertEqual(got["scripts/maps/x.py"], files["scripts/maps/x.py"])
+        self.assertEqual(got["assets/sprites/pell.png"], files["assets/sprites/pell.png"])
+        self.assertEqual(json.loads(got["fixtures/C01-E002/plan.json"]), json.loads(files["fixtures/C01-E002/plan.json"]))
+        self.assertEqual(b["runs"], ["episode_commit 2"])
+
+    def test_tampering_and_truncation_are_rejected(self):
+        text = self.bundle({"fixtures/a.json": b'{"x": 1}\n'})
+        with self.assertRaises(ValueError):
+            self.relay.parse(text.replace('"x": 1', '"x": 2'))
+        with self.assertRaises(ValueError):
+            self.relay.parse(text.replace("=== END\n", ""))
+
+    def test_path_rules(self):
+        r = self.relay
+        self.assertTrue(r.allowed("fixtures/C01-E002/script.json"))
+        self.assertTrue(r.allowed("assets/manifest.json"))
+        self.assertFalse(r.allowed("state/world.json"))          # derived: the Action regenerates it
+        self.assertFalse(r.allowed("episodes/C01-E002/plan.json"))
+        self.assertFalse(r.allowed(".github/workflows/relay.yml"))
+        with self.assertRaises(ValueError):
+            r.parse("PQC-CHANGE 1\n=== DELETE state/world.json\n=== END\n")
