@@ -223,7 +223,10 @@
     "map:fort_harrow",
     "materials:fort"
    ],
-   "status": "todo"
+   "status": "done",
+   "started_at": "2026-10-05T08:12:38+00:00",
+   "done_at": "2026-10-05T08:18:11+00:00",
+   "note": "Fort Harrow, 6.2 min"
   }
  ]
 }

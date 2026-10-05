@@ -186,6 +186,7 @@ def long_rest(c: Creature) -> dict:
     c.hp = c.max_hp
     c.temp_hp = 0
     c.remove_condition("unconscious")
+    c.remove_condition("prone")          # after eight hours everyone gets up, including the once-downed
     c.death_saves = {"successes": 0, "failures": 0}
     c.stable = False
     if c.sheet:

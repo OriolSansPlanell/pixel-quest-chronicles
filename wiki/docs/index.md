@@ -2,9 +2,9 @@
 
 A pixel-art Dungeons & Dragons story, one episode every weekday. Four strangers, one road of lanterns, level 1 to level 20. **Every roll you see on screen is real**: the dice are seeded and logged, and you can check any of them on the [Dice](dice.md) page.
 
-## Latest episode: [C1E9 - Smoke Over the Millpond](episodes/c01-e009.md)
+## Latest episode: [C1E10 - Fort Harrow](episodes/c01-e010.md)
 
-At Wending Mill on 6 Emberfall, Brannoc heaved the bar off the burning barn's doors and Bet Hollis and a hired lad came out; the lad had breathed too much smoke, and Oriel was still tending him when a goblin boss with lantern-glass riveted to his helmet walked out of the smoke with two of his crew. With no spells left but cantrips, the party fought: the boss cut Oriel down, Brannoc killed the goblin and then held the boss alone while Oriel fought her way back to stable, and Ilsevel's fire bolt finally dropped the boss. Brannoc tended Oriel himself. The barn burned, but the mill was saved.
+On 8 Emberfall the party reached Fort Harrow, at the far end of the Lantern Road. At the gate, Corporal Dunn greeted Brannoc as 'Bran Vow' and young Ferrick repeated the sergeant's gossip that he is really an Ironvow, an exile out of Aldhammer; Tamsin changed the subject. Captain Edda Rook heard Brannoc's short report and hired all four at ten crowns a week each to ride the road and find who is buying the cores; Tamsin's haggling got nowhere. That evening Sergeant Holt's patrol brought in a goblin killed trying to open Lantern 52, wearing a black-glass pendant that dims the light around it and is cold like the dead cores.
 
 ## The party
 
@@ -13,4 +13,4 @@ At Wending Mill on 6 Emberfall, Brannoc heaved the bar off the burning barn's do
 - **[Tamsin Underbough](characters/tamsin.md)** - The Card Player. Level 1 halfling rogue.
 - **[Oriel Ashdown](characters/oriel.md)** - The Acolyte. Level 1 human cleric.
 
-*In-world date: 7 Emberfall 1047 AK. Episodes so far: 9.*
+*In-world date: 9 Emberfall 1047 AK. Episodes so far: 10.*

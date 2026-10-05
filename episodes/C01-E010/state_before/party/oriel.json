@@ -158,11 +158,15 @@
       "qty": 1
     }
   ],
-  "money_cp": 1500,
+  "money_cp": 500,
   "heroic_inspiration": true,
   "dossier": "dossiers/oriel.md",
   "level_history": [],
-  "conditions": {},
+  "conditions": {
+    "prone": {
+      "source": "0hp"
+    }
+  },
   "effects": [],
   "exhaustion": 0,
   "death_saves": {

@@ -139,10 +139,6 @@
   },
   "inventory": [
     {
-      "id": "black_glass_pendant",
-      "qty": 1
-    },
-    {
       "id": "dagger",
       "qty": 1
     },
@@ -171,7 +167,7 @@
       "qty": 1
     }
   ],
-  "money_cp": 2000,
+  "money_cp": 1000,
   "heroic_inspiration": false,
   "dossier": "dossiers/ilsevel.md",
   "level_history": [],

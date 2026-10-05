@@ -174,5 +174,14 @@
    "episode 9 committed"
   ],
   "at": "20261005T092118Z"
+ },
+ "change-20261005T081829Z-shift-20261005-0648-021": {
+  "status": "applied",
+  "message": "Episode 10: Fort Harrow; Campaign 1 E2-E10 complete",
+  "session": "shift-20261005-0648",
+  "did": [
+   "episode 10 committed"
+  ],
+  "at": "20261005T092143Z"
  }
 }

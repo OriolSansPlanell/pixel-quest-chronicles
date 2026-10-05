@@ -3,14 +3,14 @@
   "clock": {
     "year": 1047,
     "month": 9,
-    "day": 9,
+    "day": 7,
     "hearthday": null,
     "time_of_day": "morning"
   },
   "series": {
     "campaign": 1,
-    "episode": 10,
-    "episode_in_campaign": 10,
+    "episode": 9,
+    "episode_in_campaign": 9,
     "phase": "campaign",
     "interlude": null
   },
@@ -33,12 +33,10 @@
       {
         "a": "brannoc",
         "b": "tamsin",
-        "trust": 1,
+        "trust": 0,
         "tension": 2,
         "romance": 0,
-        "notes": [
-          "C01-E010: Tamsin heard 'Ironvow' at the fort gate and changed the subject instead of asking."
-        ]
+        "notes": []
       },
       {
         "a": "brannoc",
@@ -94,9 +92,9 @@
     "reputation_title": null
   },
   "location": {
-    "id": "loc.fort-harrow",
+    "id": "loc.wending-mill",
     "region": "lanternmarch",
-    "map": "fort_harrow",
+    "map": "wending_mill",
     "pos": null,
     "unlight": "none"
   },
@@ -117,11 +115,9 @@
       "notes": []
     },
     "fac.crown-of-corvane": {
-      "reputation": 1,
+      "reputation": 0,
       "known_to_party": true,
-      "notes": [
-        "Hired by Captain Rook of Fort Harrow."
-      ]
+      "notes": []
     },
     "fac.velvet-hand": {
       "reputation": -1,
@@ -194,11 +190,10 @@
       "attitude": "friendly",
       "location": "loc.fort-harrow",
       "first_seen": "C01-E007",
-      "last_seen": "C01-E010",
+      "last_seen": "C01-E007",
       "notes": [
         "Brannoc's commanding officer",
-        "Sent Brannoc ('Bran Vow') a letter by rider: goblins seen near Wending Mill; look on the way back to the fort and bring help.",
-        "Hired Brannoc, Ilsevel, Tamsin and Oriel at ten crowns a week each to ride the Lantern Road and find out who is buying cores (C01-E010)."
+        "Sent Brannoc ('Bran Vow') a letter by rider: goblins seen near Wending Mill; look on the way back to the fort and bring help."
       ]
     },
     "npc.rusk": {
@@ -289,46 +284,13 @@
         "Ned Hollis's wife; pulled out of the burning barn at Wending Mill (C01-E009)."
       ],
       "name": "Bet Hollis"
-    },
-    "npc.corporal-dunn": {
-      "status": "alive",
-      "attitude": "friendly",
-      "location": "loc.fort-harrow",
-      "first_seen": "C01-E010",
-      "last_seen": "C01-E010",
-      "notes": [
-        "Served with Brannoc at Fort Harrow; glad to see him."
-      ],
-      "name": "Corporal Dunn"
-    },
-    "npc.ferrick": {
-      "status": "alive",
-      "attitude": "indifferent",
-      "location": "loc.fort-harrow",
-      "first_seen": "C01-E010",
-      "last_seen": "C01-E010",
-      "notes": [
-        "Young soldier who repeated the gossip that Brannoc is an 'Ironvow exile' out of Aldhammer."
-      ],
-      "name": "Ferrick"
-    },
-    "npc.sergeant-holt": {
-      "status": "alive",
-      "attitude": "friendly",
-      "location": "loc.fort-harrow",
-      "first_seen": "C01-E010",
-      "last_seen": "C01-E010",
-      "notes": [
-        "Led the patrol that brought in the goblin with the black-glass pendant."
-      ],
-      "name": "Sergeant Holt"
     }
   },
   "quests": [
     {
       "id": "q.deliver-dispatches",
       "title": "Deliver the Fort Harrow dispatches",
-      "status": "completed",
+      "status": "active",
       "giver": "npc.edda-rook",
       "reward_cp": 0,
       "objectives": [
@@ -364,24 +326,13 @@
     {
       "id": "q.wending-mill",
       "title": "Goblins near Wending Mill",
-      "status": "completed",
+      "status": "active",
       "giver": "npc.edda-rook",
       "reward_cp": 0,
       "objectives": [
         "Look in on Wending Mill on the road south",
         "Report to Captain Rook at Fort Harrow",
         "Save the people trapped in the burning barn"
-      ]
-    },
-    {
-      "id": "q.ride-for-rook",
-      "title": "Ride the Lantern Road for Captain Rook",
-      "status": "active",
-      "giver": "npc.edda-rook",
-      "reward_cp": 1000,
-      "objectives": [
-        "Patrol the Lantern Road (ten crowns a week each)",
-        "Find out who is buying the stolen lantern-cores"
       ]
     }
   ],
@@ -390,8 +341,7 @@
     "lantern_road.036": "lit",
     "lantern_road.037": "dead",
     "lantern_road.038": "lit",
-    "lantern_road.041": "dead",
-    "lantern_road.052": "lit"
+    "lantern_road.041": "dead"
   },
   "flags": {
     "series_started": true,
@@ -407,17 +357,14 @@
     "waymarker_old_road": true,
     "dead_cores_on_shrine_altar": true,
     "wending_mill_barn_burning": true,
-    "wending_mill_saved": true,
-    "black_glass_pendant_found": true,
-    "pendant_drinks_light": true,
-    "party_knows_ironvow_name": true
+    "wending_mill_saved": true
   },
   "hooks": [
     {
       "id": "hook.shaft-nine-debt",
       "owner": "brannoc",
-      "status": "planted",
-      "planted_in": "C01-E010",
+      "status": "dormant",
+      "planted_in": null,
       "payoff_in": "C5",
       "summary": "Can Brannoc's name be restored to the Book of Debts?"
     },
