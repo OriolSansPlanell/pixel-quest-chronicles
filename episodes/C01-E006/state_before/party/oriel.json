@@ -118,7 +118,7 @@
     "slots": {
       "1": {
         "max": 2,
-        "current": 2
+        "current": 0
       }
     },
     "free_casts": {
@@ -171,5 +171,5 @@
   },
   "stable": false,
   "dead": false,
-  "concentration": null
+  "concentration": "bless"
 }

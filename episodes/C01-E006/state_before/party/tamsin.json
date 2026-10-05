@@ -34,7 +34,7 @@
   },
   "hp": {
     "max": 10,
-    "current": 10,
+    "current": 9,
     "temp": 0
   },
   "hit_dice": {

@@ -3,14 +3,14 @@
   "clock": {
     "year": 1047,
     "month": 9,
-    "day": 5,
+    "day": 4,
     "hearthday": null,
-    "time_of_day": "morning"
+    "time_of_day": "night"
   },
   "series": {
     "campaign": 1,
-    "episode": 6,
-    "episode_in_campaign": 6,
+    "episode": 5,
+    "episode_in_campaign": 5,
     "phase": "campaign",
     "interlude": null
   },
@@ -41,25 +41,23 @@
       {
         "a": "brannoc",
         "b": "oriel",
-        "trust": 4,
+        "trust": 3,
         "tension": 0,
         "romance": 0,
         "notes": [
           "Brannoc stopped at the shrine twice on dispatch runs and left money in the alms box.",
-          "C01-E001: Held the line together in the first fight.",
-          "C01-E006: First watch together: she saw the painted-over anvil; he saw she fears the dark and gave her his lantern."
+          "C01-E001: Held the line together in the first fight."
         ]
       },
       {
         "a": "ilsevel",
         "b": "tamsin",
-        "trust": 2,
+        "trust": 1,
         "tension": 3,
         "romance": 0,
         "notes": [
           "C01-E002: Ilsevel did not believe Tamsin's story about the velvet thread.",
-          "C01-E003: Tamsin opened the frozen housing catch with her bare hands while Ilsevel was still looking for the key.",
-          "C01-E006: Tamsin read Ilsevel's notebook, found herself described kindly, and gave it back."
+          "C01-E003: Tamsin opened the frozen housing catch with her bare hands while Ilsevel was still looking for the key."
         ]
       },
       {
@@ -252,7 +250,7 @@
       "attitude": "helpful",
       "location": "loc.thornpike-woods",
       "first_seen": "C01-E004",
-      "last_seen": "C01-E006",
+      "last_seen": "C01-E005",
       "notes": [
         "Summoned with Find Familiar in C1E4",
         "First summoned by Ilsevel with Find Familiar at the fork of the goblin trail in Thornpike Woods (C01-E004)."
@@ -312,9 +310,7 @@
     "pell_summoned": true,
     "wolves_greyed_at_the_edges": true,
     "core_cart_due_at_dawn": true,
-    "scout_camp_taken": true,
-    "brannoc_knows_oriel_fears_the_dark": true,
-    "waymarker_old_road": true
+    "scout_camp_taken": true
   },
   "hooks": [
     {
@@ -336,8 +332,8 @@
     {
       "id": "hook.painted-anvil",
       "owner": "brannoc",
-      "status": "planted",
-      "planted_in": "C01-E006",
+      "status": "dormant",
+      "planted_in": null,
       "payoff_in": "C5",
       "summary": "The anvil painted over on Brannoc's shield."
     },
@@ -376,8 +372,8 @@
     {
       "id": "hook.gloamkey",
       "owner": "tamsin",
-      "status": "planted",
-      "planted_in": "C01-E006",
+      "status": "dormant",
+      "planted_in": null,
       "payoff_in": "C7",
       "summary": "What is the key that sings to Tamsin?"
     },

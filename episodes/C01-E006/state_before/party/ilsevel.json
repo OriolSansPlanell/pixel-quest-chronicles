@@ -34,7 +34,7 @@
   },
   "hp": {
     "max": 8,
-    "current": 8,
+    "current": 4,
     "temp": 0
   },
   "hit_dice": {
@@ -127,7 +127,7 @@
     "slots": {
       "1": {
         "max": 2,
-        "current": 2
+        "current": 0
       }
     },
     "free_casts": {

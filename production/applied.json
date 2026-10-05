@@ -98,5 +98,14 @@
    "episode 5 committed"
   ],
   "at": "20261005T090603Z"
+ },
+ "change-20261005T074730Z-shift-20261005-0648-013": {
+  "status": "applied",
+  "message": "Episode 6: First Watch",
+  "session": "shift-20261005-0648",
+  "did": [
+   "episode 6 committed"
+  ],
+  "at": "20261005T090632Z"
  }
 }

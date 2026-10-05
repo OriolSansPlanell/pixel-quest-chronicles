@@ -116,7 +116,10 @@
    "after": [
     "episode:5"
    ],
-   "status": "todo"
+   "status": "done",
+   "started_at": "2026-10-05T07:43:16+00:00",
+   "done_at": "2026-10-05T07:47:30+00:00",
+   "note": "First Watch, 6.3 min"
   },
   {
    "id": "episode:7",
