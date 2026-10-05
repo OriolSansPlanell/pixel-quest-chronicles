@@ -146,5 +146,15 @@
    "map wending_mill regenerated"
   ],
   "at": "20261005T092027Z"
+ },
+ "change-20261005T080427Z-shift-20261005-0648-018": {
+  "status": "applied",
+  "message": "Episode 8: Wending Mill",
+  "session": "shift-20261005-0648",
+  "did": [
+   "map wending_mill regenerated",
+   "episode 8 committed"
+  ],
+  "at": "20261005T092052Z"
  }
 }

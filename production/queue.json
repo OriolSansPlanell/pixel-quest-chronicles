@@ -171,7 +171,10 @@
     "map:wending_mill",
     "materials:mill"
    ],
-   "status": "todo"
+   "status": "done",
+   "started_at": "2026-10-05T08:00:16+00:00",
+   "done_at": "2026-10-05T08:04:27+00:00",
+   "note": "Wending Mill, 6.4 min"
   },
   {
    "id": "episode:9",

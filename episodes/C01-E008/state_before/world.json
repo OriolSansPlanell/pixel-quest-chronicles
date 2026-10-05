@@ -5,12 +5,12 @@
     "month": 9,
     "day": 6,
     "hearthday": null,
-    "time_of_day": "noon"
+    "time_of_day": "morning"
   },
   "series": {
     "campaign": 1,
-    "episode": 8,
-    "episode_in_campaign": 8,
+    "episode": 7,
+    "episode_in_campaign": 7,
     "phase": "campaign",
     "interlude": null
   },
@@ -86,9 +86,9 @@
     "reputation_title": null
   },
   "location": {
-    "id": "loc.wending-mill",
+    "id": "loc.crooked-kettle",
     "region": "lanternmarch",
-    "map": "wending_mill",
+    "map": "brindle_cross",
     "pos": null,
     "unlight": "none"
   },
@@ -250,22 +250,11 @@
       "attitude": "helpful",
       "location": "loc.thornpike-woods",
       "first_seen": "C01-E004",
-      "last_seen": "C01-E008",
+      "last_seen": "C01-E006",
       "notes": [
         "Summoned with Find Familiar in C1E4",
         "First summoned by Ilsevel with Find Familiar at the fork of the goblin trail in Thornpike Woods (C01-E004)."
       ]
-    },
-    "npc.ned-hollis": {
-      "status": "alive",
-      "attitude": "friendly",
-      "location": "loc.wending-mill",
-      "first_seen": "C01-E008",
-      "last_seen": "C01-E008",
-      "notes": [
-        "Old miller of Wending Mill; barricaded the villagers in the watermill when goblins attacked (C01-E008)."
-      ],
-      "name": "Ned Hollis"
     }
   },
   "quests": [
@@ -313,8 +302,7 @@
       "reward_cp": 0,
       "objectives": [
         "Look in on Wending Mill on the road south",
-        "Report to Captain Rook at Fort Harrow",
-        "Save the people trapped in the burning barn"
+        "Report to Captain Rook at Fort Harrow"
       ]
     }
   ],
@@ -337,8 +325,7 @@
     "scout_camp_taken": true,
     "brannoc_knows_oriel_fears_the_dark": true,
     "waymarker_old_road": true,
-    "dead_cores_on_shrine_altar": true,
-    "wending_mill_barn_burning": true
+    "dead_cores_on_shrine_altar": true
   },
   "hooks": [
     {

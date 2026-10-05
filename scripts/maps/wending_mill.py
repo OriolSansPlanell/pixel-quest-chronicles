@@ -92,7 +92,7 @@ def build(burning: bool) -> dict:
     add("haystack", 5, 19, 1, 2)
     add("haystack", 10, 22, 1, 2)
     if burning:
-        for x, y in [(34, 12), (37, 13), (30, 18), (38, 22)]:
+        for x, y in [(34, 12), (37, 13), (33, 10), (39, 22)]:
             add("smoke", x, y, 2, 2, solid=False)
     # Edges: trees all round, thicker to the east and south.
     margin = {(x + dx, y + dy) for (x, y) in open_ for dx in (-1, 0, 1) for dy in (-1, 0, 1)}

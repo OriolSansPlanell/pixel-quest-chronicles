@@ -9,7 +9,7 @@
   "class": "fighter",
   "subclass": null,
   "level": 1,
-  "xp": 142,
+  "xp": 99,
   "background": "soldier",
   "deity": "vigrun",
   "base_scores": {
@@ -105,7 +105,7 @@
   "resources": {
     "second_wind": {
       "max": 2,
-      "current": 0,
+      "current": 2,
       "recharge": "long",
       "short_rest_regain": 1
     }
