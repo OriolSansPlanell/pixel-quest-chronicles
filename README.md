@@ -113,6 +113,9 @@ The pack covers everything structurally; these would raise quality and are the b
 | Goblins, wolves, Skarrow | No goblins or wolves in the pack | GreenPig, DemonGreen, Beast2 |
 | European-style buildings and an iron-and-glass lantern post | The pack's houses and stone lanterns look Japanese | Pack houses, stone lantern |
 | Battle backdrops per biome | Arena is tiled from the map tileset | Tiled grass/dirt arena |
+| An old Lamplighter way-marker stone (C1E6) | Should read as a Lamplighter road marker, not a gravestone | TilesetElement carved stele (`waymarker`) |
+| Pell's single white feather, an animated campfire | Too small to show at 16 px; the pack has no animated fire tile | Recoloured pack owl (`pell`); stone fire ring with a flickering light (`campfire`) |
+| Faceted lantern-core crystal | Cores are "faceted crystals" in the bible | Pack gem recoloured grey (`assets/sprites/core_dead.png`) |
 
 ## How an episode is made (Phase 3)
 

@@ -223,6 +223,20 @@
    "voice": {
     "pitch": 500
    }
+  },
+  "pell": {
+   "src": "Actor/Monster/Owl",
+   "type": "monster",
+   "sheet": "Owl.png",
+   "recolor": {
+    "#ffad5d": "#a0703f",
+    "#d14b34": "#6b4a2e",
+    "#8d977f": "#d9a066"
+   },
+   "voice": {
+    "pitch": 520
+   },
+   "note": "Pell, Ilsevel's owl familiar: the pack's owl recoloured brown (the single white feather is too small to show at 16 px)"
   }
  },
  "terrain": {
@@ -936,6 +950,99 @@
     1
    ],
    "solid": "all"
+  },
+  "tent": {
+   "sheet": "Backgrounds/Tilesets/tileset_camp.png",
+   "rect": [
+    4,
+    0,
+    3,
+    3
+   ],
+   "solid": "all"
+  },
+  "tent_ragged": {
+   "sheet": "Backgrounds/Tilesets/tileset_camp.png",
+   "rect": [
+    10,
+    0,
+    3,
+    3
+   ],
+   "solid": "all",
+   "note": "Patched goblin tent"
+  },
+  "campfire": {
+   "sheet": "Backgrounds/Tilesets/tileset_camp.png",
+   "rect": [
+    12,
+    5,
+    2,
+    2
+   ],
+   "solid": "all",
+   "light": {
+    "radius": 72,
+    "offset": [
+     16,
+     16
+    ]
+   },
+   "note": "Stone fire ring with embers; the glow is the light"
+  },
+  "log_bench": {
+   "sheet": "Backgrounds/Tilesets/tileset_camp.png",
+   "rect": [
+    0,
+    7,
+    3,
+    1
+   ],
+   "solid": "all"
+  },
+  "stump_big": {
+   "sheet": "Backgrounds/Tilesets/tileset_camp.png",
+   "rect": [
+    1,
+    5,
+    2,
+    2
+   ],
+   "solid": "all"
+  },
+  "waymarker": {
+   "sheet": "Backgrounds/Tilesets/TilesetElement.png",
+   "rect": [
+    5,
+    2,
+    1,
+    1
+   ],
+   "solid": "all",
+   "stand_in": true,
+   "note": "Stand-in for an old Lamplighter way-marker stone"
+  },
+  "core_dead": {
+   "sheet": "assets/sprites/core_dead.png",
+   "rect": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "solid": "none",
+   "note": "A dead lantern-core: grey, cloudy crystal (drawn for the show from the pack gem)"
+  },
+  "cart_cores": {
+   "sheet": "assets/sprites/cart_cores.png",
+   "rect": [
+    0,
+    0,
+    2,
+    2
+   ],
+   "solid": "all",
+   "note": "The pack cart with three dead lantern-cores in its bed"
   }
  },
  "fx": {

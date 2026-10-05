@@ -64,5 +64,12 @@
    "episode 3 committed"
   ],
   "at": "20261005T090410Z"
+ },
+ "change-20261005T073218Z-shift-20261005-0648-009": {
+  "status": "applied",
+  "message": "map:thornpike_woods and materials:woods (part 1/2)",
+  "session": "shift-20261005-0648",
+  "did": [],
+  "at": "20261005T090438Z"
  }
 }
