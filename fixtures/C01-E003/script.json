@@ -29,6 +29,7 @@
   {
    "id": "s2",
    "cues": [
+    {"op": "lantern", "id": "lantern_road.037", "state": "dead", "flicker": 0, "sfx": false, "unlight": {"radius": 56, "grow": 1.0, "strength": 0.45}},
     {"op": "narrate", "text": "Lantern Thirty-Seven. Its glass is grey and furred with frost, though the afternoon sun is warm on everyone's back."},
     {"op": "say", "speaker": "ilsevel", "text": "The Order issues every inspector a housing key. It is in here. Somewhere. Between the almanac and my spare quills."},
     {"op": "say", "speaker": "tamsin", "text": "Professor, may I? It's a catch, not a riddle."},

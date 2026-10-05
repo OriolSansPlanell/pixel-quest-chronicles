@@ -55,5 +55,14 @@
   "session": "shift-20261005-0648",
   "did": [],
   "at": "20261005T090341Z"
+ },
+ "change-20261005T071946Z-shift-20261005-0648-007": {
+  "status": "applied",
+  "message": "Episode 3: The Empty Housing",
+  "session": "shift-20261005-0648",
+  "did": [
+   "episode 3 committed"
+  ],
+  "at": "20261005T090410Z"
  }
 }

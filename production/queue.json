@@ -47,9 +47,11 @@
    "after": [
     "episode:2"
    ],
-   "status": "in_progress",
+   "status": "done",
    "spec": "Map lantern_road (built). Lantern 37 is already dead (state). Points: lantern_37, trail_start, woods_edge, east_exit.",
-   "started_at": "2026-10-05T07:13:04+00:00"
+   "started_at": "2026-10-05T07:13:04+00:00",
+   "done_at": "2026-10-05T07:19:45+00:00",
+   "note": "The Empty Housing, 6.1 min"
   },
   {
    "id": "map:thornpike_woods",

@@ -282,7 +282,7 @@ def assemble(plan: dict, script: dict, res: Resolution, check_cues: dict[str, li
                              **({"wait": False} if c.get("wait") is False else {})})
                 framer.cam = list(c["to"][:2])
             elif op == "lantern":
-                cue = {k: v for k, v in c.items() if k in ("op", "id", "state", "flicker", "unlight")}
+                cue = {k: v for k, v in c.items() if k in ("op", "id", "state", "flicker", "unlight", "sfx")}
                 cue.setdefault("flicker", 1.6)
                 if cue.get("state") == "dead" and "unlight" not in cue:
                     cue["unlight"] = {"radius": 70, "grow": 3.0, "strength": 0.6}
