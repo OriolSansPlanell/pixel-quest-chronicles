@@ -92,7 +92,10 @@
     "map:thornpike_woods",
     "materials:woods"
    ],
-   "status": "todo"
+   "status": "done",
+   "started_at": "2026-10-05T07:32:27+00:00",
+   "done_at": "2026-10-05T07:36:54+00:00",
+   "note": "Wolves at the Birches, 6.7 min"
   },
   {
    "id": "episode:5",

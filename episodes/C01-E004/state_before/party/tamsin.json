@@ -9,7 +9,7 @@
   "class": "rogue",
   "subclass": null,
   "level": 1,
-  "xp": 74,
+  "xp": 37,
   "background": "criminal",
   "deity": "quill",
   "base_scores": {
@@ -34,7 +34,7 @@
   },
   "hp": {
     "max": 10,
-    "current": 7,
+    "current": 10,
     "temp": 0
   },
   "hit_dice": {

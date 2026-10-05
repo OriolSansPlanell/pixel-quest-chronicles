@@ -5,12 +5,12 @@
     "month": 9,
     "day": 4,
     "hearthday": null,
-    "time_of_day": "night"
+    "time_of_day": "dusk"
   },
   "series": {
     "campaign": 1,
-    "episode": 4,
-    "episode_in_campaign": 4,
+    "episode": 3,
+    "episode_in_campaign": 3,
     "phase": "campaign",
     "interlude": null
   },
@@ -82,9 +82,9 @@
     "reputation_title": null
   },
   "location": {
-    "id": "loc.thornpike-woods",
+    "id": "loc.lantern-road",
     "region": "lanternmarch",
-    "map": "thornpike_woods",
+    "map": "lantern_road",
     "pos": null,
     "unlight": "none"
   },
@@ -240,14 +240,13 @@
       ]
     },
     "npc.pell": {
-      "status": "alive",
+      "status": "unmet",
       "attitude": "helpful",
-      "location": "loc.thornpike-woods",
-      "first_seen": "C01-E004",
-      "last_seen": "C01-E004",
+      "location": null,
+      "first_seen": null,
+      "last_seen": null,
       "notes": [
-        "Summoned with Find Familiar in C1E4",
-        "First summoned by Ilsevel with Find Familiar at the fork of the goblin trail in Thornpike Woods (C01-E004)."
+        "Summoned with Find Familiar in C1E4"
       ]
     }
   },
@@ -299,9 +298,7 @@
     "ledger_unknown_warden_mark": true,
     "cores_traded_for_food": true,
     "rusk_afraid_to_go_back": true,
-    "core_37_removed_by_hand": true,
-    "pell_summoned": true,
-    "wolves_greyed_at_the_edges": true
+    "core_37_removed_by_hand": true
   },
   "hooks": [
     {

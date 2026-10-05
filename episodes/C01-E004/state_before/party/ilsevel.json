@@ -9,7 +9,7 @@
   "class": "wizard",
   "subclass": null,
   "level": 1,
-  "xp": 74,
+  "xp": 37,
   "background": "sage",
   "deity": null,
   "base_scores": {
@@ -34,7 +34,7 @@
   },
   "hp": {
     "max": 8,
-    "current": 4,
+    "current": 8,
     "temp": 0
   },
   "hit_dice": {
@@ -127,7 +127,7 @@
     "slots": {
       "1": {
         "max": 2,
-        "current": 0
+        "current": 2
       }
     },
     "free_casts": {

@@ -80,5 +80,14 @@
    "map thornpike_woods regenerated"
   ],
   "at": "20261005T090505Z"
+ },
+ "change-20261005T073654Z-shift-20261005-0648-011": {
+  "status": "applied",
+  "message": "Episode 4: Wolves at the Birches",
+  "session": "shift-20261005-0648",
+  "did": [
+   "episode 4 committed"
+  ],
+  "at": "20261005T090534Z"
  }
 }
