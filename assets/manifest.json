@@ -237,6 +237,59 @@
     "pitch": 520
    },
    "note": "Pell, Ilsevel's owl familiar: the pack's owl recoloured brown (the single white feather is too small to show at 16 px)"
+  },
+  "miller": {
+   "src": "Actor/Character/OldMan",
+   "type": "character",
+   "voice": {
+    "pitch": 180
+   }
+  },
+  "villager_a": {
+   "src": "Actor/Character/Villager",
+   "type": "character",
+   "voice": {
+    "pitch": 230
+   }
+  },
+  "villager_b": {
+   "src": "Actor/Character/Villager2",
+   "type": "character",
+   "voice": {
+    "pitch": 290
+   }
+  },
+  "villager_c": {
+   "src": "Actor/Character/OldWoman",
+   "type": "character",
+   "voice": {
+    "pitch": 300
+   }
+  },
+  "soldier": {
+   "src": "Actor/Character/Knight",
+   "type": "character",
+   "voice": {
+    "pitch": 200
+   },
+   "note": "Fort Harrow garrison soldier"
+  },
+  "soldier_b": {
+   "src": "Actor/Character/FighterWhite",
+   "type": "character",
+   "voice": {
+    "pitch": 240
+   },
+   "note": "Fort Harrow garrison soldier"
+  },
+  "soldier_c": {
+   "src": "Actor/Character/Samurai",
+   "type": "character",
+   "voice": {
+    "pitch": 170
+   },
+   "stand_in": true,
+   "note": "Fort Harrow veteran (pack samurai as stand-in)"
   }
  },
  "terrain": {
@@ -305,6 +358,14 @@
      2
     ]
    ]
+  },
+  "water": {
+   "sheet": "Backgrounds/Tilesets/TilesetWater.png",
+   "origin": [
+    0,
+    6
+   ],
+   "note": "Pond with grassy banks; terrain does not block, so ponds are covered with water_block props"
   }
  },
  "props": {
@@ -1043,6 +1104,158 @@
    ],
    "solid": "all",
    "note": "The pack cart with three dead lantern-cores in its bed"
+  },
+  "barn": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    25,
+    7,
+    4,
+    7
+   ],
+   "solid": "all"
+  },
+  "barn_burning": {
+   "sheet": "assets/sprites/barn_burning.png",
+   "rect": [
+    0,
+    0,
+    4,
+    7
+   ],
+   "solid": "all",
+   "light": {
+    "radius": 110,
+    "offset": [
+     32,
+     60
+    ]
+   },
+   "note": "The barn with pack flame frames composited on it"
+  },
+  "watermill": {
+   "sheet": "assets/sprites/watermill.png",
+   "rect": [
+    0,
+    0,
+    5,
+    3
+   ],
+   "solid": "all",
+   "note": "Pack wooden house with the pack water-wheel beside it"
+  },
+  "smoke": {
+   "sheet": "assets/sprites/smoke.png",
+   "rect": [
+    0,
+    0,
+    2,
+    2
+   ],
+   "solid": "none"
+  },
+  "fence_h": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    11,
+    7,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "fence_v": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    11,
+    6,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "water_block": {
+   "sheet": "Backgrounds/Tilesets/TilesetWater.png",
+   "rect": [
+    12,
+    4,
+    1,
+    1
+   ],
+   "solid": "all",
+   "note": "Invisible: makes water impassable"
+  },
+  "house_wood": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    26,
+    0,
+    3,
+    3
+   ],
+   "solid": "all"
+  },
+  "fort_wall": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    10,
+    8,
+    1,
+    2
+   ],
+   "solid": "all"
+  },
+  "fort_wall_post": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    11,
+    8,
+    1,
+    2
+   ],
+   "solid": "all"
+  },
+  "fort_gate": {
+   "sheet": "Backgrounds/Tilesets/TilesetHouse.png",
+   "rect": [
+    8,
+    8,
+    2,
+    2
+   ],
+   "solid": "none",
+   "note": "Arched gateway, walkable"
+  },
+  "watchtower": {
+   "sheet": "Backgrounds/Tilesets/TilesetTowers.png",
+   "rect": [
+    0,
+    0,
+    2,
+    2
+   ],
+   "solid": "base"
+  },
+  "banner": {
+   "sheet": "Backgrounds/Animated/Flag/FlagRed16x16.png",
+   "rect": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "solid": "all"
+  },
+  "pendant_black": {
+   "sheet": "assets/sprites/pendant_black.png",
+   "rect": [
+    0,
+    0,
+    1,
+    1
+   ],
+   "solid": "none",
+   "note": "Black-glass pendant (pack gem recoloured)"
   }
  },
  "fx": {

@@ -116,6 +116,9 @@ The pack covers everything structurally; these would raise quality and are the b
 | An old Lamplighter way-marker stone (C1E6) | Should read as a Lamplighter road marker, not a gravestone | TilesetElement carved stele (`waymarker`) |
 | Pell's single white feather, an animated campfire | Too small to show at 16 px; the pack has no animated fire tile | Recoloured pack owl (`pell`); stone fire ring with a flickering light (`campfire`) |
 | Faceted lantern-core crystal | Cores are "faceted crystals" in the bible | Pack gem recoloured grey (`assets/sprites/core_dead.png`) |
+| A proper watermill and an animated burning barn (C1E8-9) | Composites of pack art; the fire does not move | `watermill`, `barn_burning` (assets/sprites) |
+| Fort Harrow curtain wall, gatehouse and royal soldiers (C1E10) | The pack has no curtain wall or gatehouse; soldiers are pack knights/fighters | `fort_wall`, `fort_gate` (TilesetHouse), `soldier`, `soldier_b`, `soldier_c` |
+| Black-glass pendant | Should look like black glass that drinks light | Pack gem recoloured near-black (`assets/sprites/pendant_black.png`) |
 
 ## How an episode is made (Phase 3)
 

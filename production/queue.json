@@ -142,8 +142,11 @@
     9
    ],
    "after": [],
-   "status": "todo",
-   "spec": "Hamlet of Wending Mill (bible 03): a watermill on a millpond (TilesetWater), mill yard with fences, two or three cottages, a barn that burns in E9 (fire FX on props), a road in from the north. ~44x28. Mill yard needs open ground for a 4-goblin fight; the burning barn needs space for a boss fight."
+   "status": "done",
+   "spec": "Hamlet of Wending Mill (bible 03): a watermill on a millpond (TilesetWater), mill yard with fences, two or three cottages, a barn that burns in E9 (fire FX on props), a road in from the north. ~44x28. Mill yard needs open ground for a 4-goblin fight; the burning barn needs space for a boss fight.",
+   "started_at": "2026-10-05T07:59:17+00:00",
+   "done_at": "2026-10-05T07:59:17+00:00",
+   "note": "44x28 hamlet: watermill with its wheel in an oval millpond (water terrain + invisible water_block props), fenced mill yard (E8 fight), cottages, barn with open ground (E9); the generator also writes wending_mill_burning (barn on fire, smoke)"
   },
   {
    "id": "materials:mill",
@@ -153,8 +156,11 @@
     9
    ],
    "after": [],
-   "status": "todo",
-   "spec": "Watermill building (TilesetHouse / TilesetVillageAbandoned or composed), fences, millpond water terrain, fire/smoke props for the burning barn (FX or Animated tiles), frightened villagers (pack villager sprites, give them ids), goblin boss sprite check."
+   "status": "done",
+   "spec": "Watermill building (TilesetHouse / TilesetVillageAbandoned or composed), fences, millpond water terrain, fire/smoke props for the burning barn (FX or Animated tiles), frightened villagers (pack villager sprites, give them ids), goblin boss sprite check.",
+   "started_at": "2026-10-05T07:59:17+00:00",
+   "done_at": "2026-10-05T07:59:17+00:00",
+   "note": "watermill and barn_burning composites, barn, fences, water terrain, water_block, smoke; villagers: miller, villager_a/b/c"
   },
   {
    "id": "episode:8",
@@ -183,8 +189,11 @@
     10
    ],
    "after": [],
-   "status": "todo",
-   "spec": "Fort Harrow (bible 03: a tired royal garrison of 40 under Captain Edda Rook): palisade or stone wall with a gate (TilesetTowers), barracks, Rook's command house, a training yard, a lantern at the gate. ~44x28."
+   "status": "done",
+   "spec": "Fort Harrow (bible 03: a tired royal garrison of 40 under Captain Edda Rook): palisade or stone wall with a gate (TilesetTowers), barracks, Rook's command house, a training yard, a lantern at the gate. ~44x28.",
+   "started_at": "2026-10-05T07:59:17+00:00",
+   "done_at": "2026-10-05T07:59:17+00:00",
+   "note": "44x28: stone curtain wall with corner watchtowers, arched south gate with a lantern, command house, barracks, parade ground, training yard"
   },
   {
    "id": "materials:fort",
@@ -193,8 +202,11 @@
     10
    ],
    "after": [],
-   "status": "todo",
-   "spec": "Soldier sprites (2-3 pack characters as garrison troops), walls/gate/towers props, a black-glass pendant item (a small dark gem prop or item icon for the dice/inventory)."
+   "status": "done",
+   "spec": "Soldier sprites (2-3 pack characters as garrison troops), walls/gate/towers props, a black-glass pendant item (a small dark gem prop or item icon for the dice/inventory).",
+   "started_at": "2026-10-05T07:59:17+00:00",
+   "done_at": "2026-10-05T07:59:17+00:00",
+   "note": "soldier, soldier_b, soldier_c (stand-in), fort_wall/fort_wall_post/fort_gate, watchtower, banner, pendant_black sprite"
   },
   {
    "id": "episode:10",
