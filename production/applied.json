@@ -12,5 +12,12 @@
   "session": "shift-20261005-0648",
   "did": [],
   "at": "20261005T085305Z"
+ },
+ "change-20261005T065516Z-shift-20261005-0648-002": {
+  "status": "applied",
+  "message": "wip(episode:2): script, continuity",
+  "session": "shift-20261005-0648",
+  "did": [],
+  "at": "20261005T085350Z"
  }
 }
