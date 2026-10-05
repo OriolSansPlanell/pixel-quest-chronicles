@@ -56,8 +56,10 @@ Then, with the Drive `search_files` tool (`excludeContentSnippets: true`,
 
 1. **Is another shift working?** Query `parentId = '12goNsljb81bvFzRDcNzoyFoFbU_0mA0B'
    and createdTime > '<now minus 75 minutes, RFC 3339 UTC>'`. If any title is a
-   bundle or a `shift-start-…` marker of **another** session and that session has
-   no `shift-end-<session>.txt`, it is still working: stop quietly.
+   bundle or a `shift-start-…` marker of **another** shift (session names start
+   with `shift-`) and that session has no `shift-end-<session>.txt`, it is still
+   working: stop quietly. Bundles from sessions not named `shift-…` (setup and
+   test sessions run by hand) never count as a running shift.
 2. **Is the repository up to date?** Query `parentId = '12goNsljb81bvFzRDcNzoyFoFbU_0mA0B'`,
    write all titles to `/tmp/names.txt` (one per line), and run
    `python3 scripts/relay.py pending /tmp/names.txt`. If it lists bundles still
