@@ -7,6 +7,9 @@ name: relay
 on:
   schedule:
     - cron: "*/10 * * * *"
+  push:                       # also right after the relay itself changes
+    branches: [main]
+    paths: [".github/workflows/relay.yml", "scripts/relay.py", "production/relay.json"]
   workflow_dispatch:
 permissions: {contents: write, actions: write}
 concurrency: {group: relay, cancel-in-progress: false}
