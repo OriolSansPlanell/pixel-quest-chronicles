@@ -268,7 +268,10 @@ def _episode_page(e: dict, canon: dict, sheets: dict) -> str:
     out = [f"# {_ep_title(e)}", "", f"*In-world date: {_date(r['in_world_date'])}*  ", f"*Seed: `{r['seed']}`*", ""]
     site = WIKI / "data" / "site.json"
     repo = load_json(site).get("repo") if site.exists() else None
-    if pk.get("youtube_url"):
+    yt = load_json(WIKI / "data" / "youtube.json").get(e["id"], {}) if (WIKI / "data" / "youtube.json").exists() else {}
+    if yt.get("linked"):              # premiere has passed (scripts/youtube_upload.py link)
+        out += [f"[Watch on YouTube]({yt['url']})", ""]
+    elif pk.get("youtube_url"):
         out += [f"[Watch on YouTube]({pk['youtube_url']})", ""]
     if repo:
         out += [f"[Download the episode video](https://github.com/{repo}/releases/tag/{e['id']})", ""]

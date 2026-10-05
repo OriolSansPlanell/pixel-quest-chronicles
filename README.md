@@ -33,6 +33,7 @@ This repository holds **Phase 1 — Foundations** (canon, party, state format, r
 | `wiki/` | MkDocs site (`mkdocs.yml`, generated `docs/`, human-approved `data/public/`). |
 | `scripts/run_episode.py` | Produce an episode (offline replay, live, or record). |
 | `scripts/contact_sheet.py`, `scripts/cost_report.py` | Review sheet of an episode; cost projection from its ledger. |
+| `scripts/youtube_upload.py`, `production/youtube.json` | Uploads released episodes to YouTube and schedules their premieres (`.github/workflows/youtube.yml`; setup in `production/YOUTUBE.md`). |
 
 ## Quick start
 
@@ -119,6 +120,28 @@ The pack covers everything structurally; these would raise quality and are the b
 | A proper watermill and an animated burning barn (C1E8-9) | Composites of pack art; the fire does not move | `watermill`, `barn_burning` (assets/sprites) |
 | Fort Harrow curtain wall, gatehouse and royal soldiers (C1E10) | The pack has no curtain wall or gatehouse; soldiers are pack knights/fighters | `fort_wall`, `fort_gate` (TilesetHouse), `soldier`, `soldier_b`, `soldier_c` |
 | Black-glass pendant | Should look like black glass that drinks light | Pack gem recoloured near-black (`assets/sprites/pendant_black.png`) |
+
+#### Free sources checked (October 2026)
+
+Licences read on each page. All are CC0 unless marked; none can be downloaded from this
+project's build machines (itch.io, OpenGameArt and kenney.nl are blocked there), so download the zips by hand
+and commit the files you use under `assets/` with a line in `assets/CREDITS.md`.
+
+| Need | Best free source | Licence | Fit |
+| --- | --- | --- | --- |
+| Party sprites | [0x72 DungeonTileset II](https://0x72.itch.io/dungeontileset-ii) (dwarf, elf, knight, wizard) | CC0 | 16 px, idle + run, side-facing only: up/down walks must be drawn; no halfling (shrink the dwarf/human) |
+| Party sprites, soldiers | [Shade, Puny Characters](https://merchant-shade.itch.io/16x16-puny-characters) | CC0 | 8 directions, full animation set; chibi proportions, a weaker style match |
+| Goblins, zombie, sorceress | DungeonTileset II (goblin, zombie, orcs, ogre as goblin boss, necromancer) | CC0 | As above |
+| Wolves | [Dog/Wolf spritesheet](https://opengameart.org/content/dogwolf-spritesheet) | CC0 | Side view only; no top-down CC0 wolf found: needs drawing |
+| Portraits | Ninja Adventure facesets + hand-drawn expressions; [32x32 Portraits](https://opengameart.org/node/96477) | CC0 | No CC0 set with several emotions per fantasy character exists |
+| Buildings, castle walls | [ArMM1998 Zelda-like tilesets](https://opengameart.org/content/zelda-like-tilesets-and-sprites); [Shade MiniWorld](https://opengameart.org/content/miniworld-sprites); [bart 16x16 castle tiles](https://opengameart.org/content/16x16-castle-tiles) (CC-BY 3.0: credit "bart") | CC0 / CC-BY | Zelda-like is the closest style match |
+| Animated campfire | [crad Campfire Animation](https://opengameart.org/content/campfire-animation) | CC0 | 8 frames |
+| Burning barn | [Reactorcore Fire & Smoke](https://opengameart.org/content/fire-smoke-animations) over the barn | CC0 | Animated overlay |
+| Crystal, pendant | [AntumDeluge jewelry icons](https://opengameart.org/node/120756) | CC0 | 16/24/32 px gems and amulets to recolour |
+| Not found free | Lantern post, way-marker stone, watermill, white feather, battle backdrops | | Draw, or commission |
+
+Rejected: haggisbytes and thepixelgame goblin packs ("no redistribution"), jeresikstus characters (no licence),
+cobgoblin portraits (CC-BY-SA: share-alike), Kenney Tiny Town (CC0 but flat, unoutlined style).
 
 ## How an episode is made (Phase 3)
 

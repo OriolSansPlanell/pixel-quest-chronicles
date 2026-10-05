@@ -494,3 +494,80 @@ class TestRelayParts(unittest.TestCase):
         self.assertEqual(r._group_parts(texts), [["c-001"], ["c-002", "c-003"], ["c-004"]])
         del texts["c-003"]
         self.assertEqual(r._group_parts(texts), [["c-001"], None])
+
+
+class TestYouTube(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("youtube_upload", ROOT / "scripts" / "youtube_upload.py")
+        cls.yt = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.yt)
+        cls.cfg = load_json(ROOT / "production" / "youtube.json")
+
+    def test_config_starts_disabled(self):
+        self.assertFalse(self.cfg["enabled"])
+
+    def test_slots_are_weekdays_at_local_time(self):
+        import datetime as dt
+        from zoneinfo import ZoneInfo
+        fri = dt.datetime(2026, 10, 9, 18, 0, tzinfo=ZoneInfo("Europe/Madrid"))   # Friday after the slot
+        slots = self.yt.next_slots(self.cfg, fri, 3)
+        local = [s.astimezone(ZoneInfo("Europe/Madrid")) for s in slots]
+        self.assertEqual([(t.day, t.hour, t.weekday()) for t in local], [(12, 17, 0), (13, 17, 1), (14, 17, 2)])
+        # Across the October clock change the local time stays 17:00.
+        late = self.yt.next_slots(self.cfg, dt.datetime(2026, 10, 22, 18, tzinfo=ZoneInfo("Europe/Madrid")), 2)
+        self.assertEqual([s.astimezone(ZoneInfo("Europe/Madrid")).hour for s in late], [17, 17])
+        self.assertEqual([s.hour for s in late], [15, 16])
+
+    def test_schedule_follows_last_premiere(self):
+        import datetime as dt
+        now = dt.datetime(2026, 10, 5, 8, tzinfo=dt.timezone.utc)
+        ledger = {"C01-E001": {"publish_at": "2026-10-07T15:00:00Z"}}
+        got = self.yt.schedule_for(self.cfg, ledger, ["C01-E002"], now)
+        self.assertEqual(self.yt.iso(got["C01-E002"]), "2026-10-08T15:00:00Z")
+
+    def test_pending_is_strictly_in_order(self):
+        rel = ["C01-E001", "C01-E002", "C01-E003", "C01-E004"]
+        self.assertEqual(self.yt.pending({"C01-E001": {}}, rel), ["C01-E002", "C01-E003", "C01-E004"])
+        self.assertEqual(self.yt.pending({"C01-E001": {}, "C01-E003": {}}, rel), ["C01-E002"])
+
+    def test_metadata_fits_youtube_limits(self):
+        import datetime as dt
+        for p in sorted((ROOT / "episodes").glob("C01-E*/packaging.json")):
+            pk = load_json(p)
+            body = self.yt.video_body(pk, self.cfg, dt.datetime(2026, 10, 7, 15, tzinfo=dt.timezone.utc))
+            sn, st = body["snippet"], body["status"]
+            self.assertLessEqual(len(sn["title"]), 100)
+            self.assertLessEqual(len(sn["description"]), 5000)
+            self.assertNotIn("<", sn["title"] + sn["description"])
+            self.assertLessEqual(len(",".join(sn["tags"])), 500)
+            self.assertIn("0:00", sn["description"])           # chapters survive
+            self.assertEqual((st["privacyStatus"], st["publishAt"]), ("private", "2026-10-07T15:00:00Z"))
+        tags = self.yt.clean_tags(["a<b>", "x, y", "z" * 600])
+        self.assertEqual(tags, ["ab", "x  y"])
+
+    def test_link_marks_passed_premieres_and_wiki_shows_them(self):
+        import datetime as dt
+        from pqc.pipeline import wiki
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger = Path(tmp) / "youtube.json"
+            ledger.write_text(json.dumps({
+                "C01-E001": {"video_id": "abc", "url": "https://www.youtube.com/watch?v=abc",
+                             "publish_at": "2026-10-05T15:00:00Z", "linked": False},
+                "C01-E002": {"video_id": "def", "url": "https://www.youtube.com/watch?v=def",
+                             "publish_at": "2026-10-06T15:00:00Z", "linked": False}}))
+            with mock.patch.object(self.yt, "LEDGER", ledger):
+                self.yt.cmd_link(dt.datetime(2026, 10, 5, 16, tzinfo=dt.timezone.utc))
+            got = json.loads(ledger.read_text())
+            self.assertEqual((got["C01-E001"]["linked"], got["C01-E002"]["linked"]), (True, False))
+            fake = Path(tmp) / "wiki"
+            (fake / "data").mkdir(parents=True)
+            shutil.copy(ledger, fake / "data" / "youtube.json")
+            arch = {e["id"]: e for e in wiki.load_archive()}
+            canon = wiki.build_canon(list(arch.values()))
+            with mock.patch.object(wiki, "WIKI", fake):
+                p1 = wiki._episode_page(arch["C01-E001"], canon, sheets())
+                p2 = wiki._episode_page(arch["C01-E002"], canon, sheets())
+            self.assertIn("watch?v=abc", p1)
+            self.assertNotIn("YouTube", p2)

@@ -6,7 +6,7 @@ on:
     branches: [main]
     paths: ["state/world.json", ".github/workflows/release.yml", "scripts/release_episodes.py"]
   workflow_dispatch:
-permissions: {contents: write}
+permissions: {contents: write, actions: write}
 concurrency: {group: release, cancel-in-progress: false}
 jobs:
   release:
@@ -21,3 +21,6 @@ jobs:
       - name: Render and release committed episodes
         env: {GH_TOKEN: "${{ github.token }}"}
         run: python scripts/release_episodes.py
+      - name: Hand new releases to the YouTube uploader
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: gh workflow run youtube.yml
