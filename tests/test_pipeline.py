@@ -600,3 +600,21 @@ class TestTrailer(unittest.TestCase):
                  {"ep": 1, "cue": 2, "dur": 1.0}]
         self.assertEqual(self.tr.start_pos("wide", shots, {}, 30, shots[1:], 1), [2.0, 5.0])
         self.assertEqual(self.tr.start_pos("vertical", shots, {}, 30, shots[1:], 1), [None, 2.0])
+
+
+@unittest.skipUnless(HAVE_PACK, "needs vendor/ (fonts)")
+class TestBrand(unittest.TestCase):
+    def test_logo_and_intro_frames(self):
+        import importlib.util
+        from pqc.render import brand
+        from pqc.render.assets import Assets
+        a = Assets()
+        self.assertEqual(brand.d20_mark(a, 2).size, (96, 96))
+        self.assertGreater(brand.lockup(a, stacked=False, scale=1, tagline="x").width, 48)
+        spec = importlib.util.spec_from_file_location("branding", ROOT / "scripts" / "branding.py")
+        br = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(br)
+        frames = list(br.intro_frames(a, (480, 270)))
+        self.assertEqual(len(frames), 126)
+        self.assertEqual(frames[0].size, (480, 270))
+        self.assertEqual(len(list(br.outro_frames(a, (270, 480)))), 90)
