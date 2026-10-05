@@ -1,10 +1,10 @@
 {
   "schema": "pqc/packaging@1",
   "episode_id": "C01-E003",
-  "title": "The Empty Housing | Pixel Quest Chronicles C1E3",
+  "title": "The Empty Housing | Nat 20 Pixels C1E3",
   "description": "Lantern Thirty-Seven burned for three hundred years and went out in a single night. Today the party walks out to find out why.\nA lantern cannot simply go out. So what happened to this one?\n\nEpisode 3 of a daily pixel-art D&D 5e story. Brannoc, Ilsevel, Tamsin and Oriel walk the Lantern Road to the dead lantern, where the grass has turned grey in broad daylight and the glass is cold to the touch. A frozen lock, a scholar's eye, a soldier reading the ground at dusk: every check is decided by real, seeded dice shown on screen, with no rerolls.\n\nNew episode every weekday. Characters, quotes and every roll are on the wiki.",
   "tags": [
-    "Pixel Quest Chronicles",
+    "Nat 20 Pixels",
     "D&D 5e",
     "Dungeons and Dragons",
     "pixel art",
@@ -39,5 +39,5 @@
     }
   ],
   "duration_s": 366.6,
-  "description_full": "Lantern Thirty-Seven burned for three hundred years and went out in a single night. Today the party walks out to find out why.\nA lantern cannot simply go out. So what happened to this one?\n\nEpisode 3 of a daily pixel-art D&D 5e story. Brannoc, Ilsevel, Tamsin and Oriel walk the Lantern Road to the dead lantern, where the grass has turned grey in broad daylight and the glass is cold to the touch. A frozen lock, a scholar's eye, a soldier reading the ground at dusk: every check is decided by real, seeded dice shown on screen, with no rerolls.\n\nNew episode every weekday. Characters, quotes and every roll are on the wiki.\n\nChapters\n0:00 One Mile South\n1:58 The Empty Housing\n4:30 The Trail East\n\nEvery roll in this episode is real: seed C01-E003-1, 3 rolls, all logged and verifiable at https://oriolsansplanell.github.io/pixel-quest-chronicles/dice/.\nEpisode page and lore: https://oriolsansplanell.github.io/pixel-quest-chronicles/episodes/c01-e003/\n\nArt, music & SFX: Ninja Adventure Asset Pack by Pixel-boy & AAA (CC0). Fonts: Pixelify Sans, Tiny5 (OFL).\nRules: SRD 5.2 by Wizards of the Coast, CC-BY-4.0. Not affiliated with Wizards of the Coast."
+  "description_full": "Lantern Thirty-Seven burned for three hundred years and went out in a single night. Today the party walks out to find out why.\nA lantern cannot simply go out. So what happened to this one?\n\nEpisode 3 of a daily pixel-art D&D 5e story. Brannoc, Ilsevel, Tamsin and Oriel walk the Lantern Road to the dead lantern, where the grass has turned grey in broad daylight and the glass is cold to the touch. A frozen lock, a scholar's eye, a soldier reading the ground at dusk: every check is decided by real, seeded dice shown on screen, with no rerolls.\n\nNew episode every weekday. Characters, quotes and every roll are on the wiki.\n\nChapters\n0:00 One Mile South\n1:58 The Empty Housing\n4:30 The Trail East\n\nEvery roll in this episode is real: seed C01-E003-1, 3 rolls, all logged and verifiable on the wiki.\n\nArt, music & SFX: Ninja Adventure Asset Pack by Pixel-boy & AAA (CC0). Fonts: Pixelify Sans, Tiny5 (OFL).\nRules: SRD 5.2 by Wizards of the Coast, CC-BY-4.0. Not affiliated with Wizards of the Coast."
 }

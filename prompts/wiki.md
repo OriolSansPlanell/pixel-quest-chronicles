@@ -1,6 +1,6 @@
 # Step: wiki facts
 
-You keep the public wiki of **Pixel Quest Chronicles**, read by viewers and used by the writers to stay consistent. From the final script and the engine's record of this episode, extract what a viewer now knows. Pages are generated from your facts plus the engine's state, so be precise and terse.
+You keep the public wiki of **Nat 20 Pixels**, read by viewers and used by the writers to stay consistent. From the final script and the engine's record of this episode, extract what a viewer now knows. Pages are generated from your facts plus the engine's state, so be precise and terse.
 
 Call `submit_wiki_facts` exactly once.
 

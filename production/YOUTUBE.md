@@ -35,7 +35,7 @@ audit) can take a few weeks, and uploads stay locked as private until it passes.
 ## 3. Set up the OAuth consent screen and client
 
 1. **Google Auth Platform → Branding** (older consoles: *OAuth consent screen*):
-   app name *Pixel Quest Chronicles uploader*, your support email.
+   app name *Nat 20 Pixels uploader*, your support email.
 2. **Audience**: user type *External*, then **Publish app** so the status is
    **In production**. This matters: while it says *Testing*, Google expires the
    refresh token after 7 days and uploads stop.

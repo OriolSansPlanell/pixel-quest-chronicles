@@ -1,10 +1,10 @@
 {
   "schema": "pqc/packaging@1",
   "episode_id": "C01-E007",
-  "title": "The Saint of the Open Hand | Pixel Quest Chronicles C1E7",
+  "title": "The Saint of the Open Hand | Nat 20 Pixels C1E7",
   "description": "Home to Brindle Cross, with three dead lantern-cores and no lit lantern.\nAn old priest has two stories to tell tonight. One of them is Oriel's.\n\nEpisode 7 of a daily pixel-art D&D 5e story. Brannoc, Ilsevel, Tamsin and Oriel return to the Crooked Kettle, where Father Tobin tells the tale of Saint Wenna by the hearth, and of the frost night he found a baby at the foot of the oldest lantern on the road. Then the door bangs open. Every roll is decided by real, seeded dice shown on screen.\n\nNew episode every weekday. Characters, quotes and every roll are on the wiki.",
   "tags": [
-    "Pixel Quest Chronicles",
+    "Nat 20 Pixels",
     "D&D 5e",
     "Dungeons and Dragons",
     "pixel art",
@@ -39,5 +39,5 @@
     }
   ],
   "duration_s": 421.8,
-  "description_full": "Home to Brindle Cross, with three dead lantern-cores and no lit lantern.\nAn old priest has two stories to tell tonight. One of them is Oriel's.\n\nEpisode 7 of a daily pixel-art D&D 5e story. Brannoc, Ilsevel, Tamsin and Oriel return to the Crooked Kettle, where Father Tobin tells the tale of Saint Wenna by the hearth, and of the frost night he found a baby at the foot of the oldest lantern on the road. Then the door bangs open. Every roll is decided by real, seeded dice shown on screen.\n\nNew episode every weekday. Characters, quotes and every roll are on the wiki.\n\nChapters\n0:00 Coming Home\n2:12 By the Hearth\n5:29 Forty-One\n\nEvery roll in this episode is real: seed C01-E007-1, 2 rolls, all logged and verifiable at https://oriolsansplanell.github.io/pixel-quest-chronicles/dice/.\nEpisode page and lore: https://oriolsansplanell.github.io/pixel-quest-chronicles/episodes/c01-e007/\n\nArt, music & SFX: Ninja Adventure Asset Pack by Pixel-boy & AAA (CC0). Fonts: Pixelify Sans, Tiny5 (OFL).\nRules: SRD 5.2 by Wizards of the Coast, CC-BY-4.0. Not affiliated with Wizards of the Coast."
+  "description_full": "Home to Brindle Cross, with three dead lantern-cores and no lit lantern.\nAn old priest has two stories to tell tonight. One of them is Oriel's.\n\nEpisode 7 of a daily pixel-art D&D 5e story. Brannoc, Ilsevel, Tamsin and Oriel return to the Crooked Kettle, where Father Tobin tells the tale of Saint Wenna by the hearth, and of the frost night he found a baby at the foot of the oldest lantern on the road. Then the door bangs open. Every roll is decided by real, seeded dice shown on screen.\n\nNew episode every weekday. Characters, quotes and every roll are on the wiki.\n\nChapters\n0:00 Coming Home\n2:12 By the Hearth\n5:29 Forty-One\n\nEvery roll in this episode is real: seed C01-E007-1, 2 rolls, all logged and verifiable on the wiki.\n\nArt, music & SFX: Ninja Adventure Asset Pack by Pixel-boy & AAA (CC0). Fonts: Pixelify Sans, Tiny5 (OFL).\nRules: SRD 5.2 by Wizards of the Coast, CC-BY-4.0. Not affiliated with Wizards of the Coast."
 }

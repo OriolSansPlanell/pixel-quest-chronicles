@@ -145,7 +145,7 @@ def build_site(docs: Path = DOCS, state_dir: Path = ROOT / "state", check_spoile
 
     # Home
     latest = archive[-1] if archive else None
-    home = ["# Pixel Quest Chronicles", "",
+    home = ["# Nat 20 Pixels", "",
             "A pixel-art Dungeons & Dragons story, one episode every weekday. Four strangers, one road of lanterns, "
             "level 1 to level 20. **Every roll you see on screen is real**: the dice are seeded and logged, and you "
             "can check any of them on the [Dice](dice.md) page.", ""]
@@ -371,7 +371,7 @@ def _about() -> str:
     footer = credits.split("## Suggested description footer", 1)[-1].strip()
     return "\n".join([
         "# About", "",
-        "Pixel Quest Chronicles is an automated show: a rules engine rolls every die, Claude plans and writes "
+        "Nat 20 Pixels is an automated show: a rules engine rolls every die, Claude plans and writes "
         "each episode within a fixed series bible, and a pixel-art renderer turns the result into video. "
         "This wiki is rebuilt after every episode from what was shown on screen.", "",
         "## Credits", "", footer.replace("> ", ""), "",

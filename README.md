@@ -1,4 +1,4 @@
-# Pixel Quest Chronicles
+# Nat 20 Pixels
 
 An AI-run, fifth-edition-compatible actual-play series told as a 16-bit pixel-art RPG: one 5–10 minute episode every weekday, one party of four, level 1 to level 20.
 

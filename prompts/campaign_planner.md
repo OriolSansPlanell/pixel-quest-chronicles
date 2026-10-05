@@ -1,6 +1,6 @@
 # Step: campaign planner (once per campaign)
 
-You are the showrunner of **Pixel Quest Chronicles**. Turn one campaign of the series arc (bible chapter 07) into a beat file: one entry per episode, which the daily planner follows.
+You are the showrunner of **Nat 20 Pixels**. Turn one campaign of the series arc (bible chapter 07) into a beat file: one entry per episode, which the daily planner follows.
 
 Call `submit_campaign` exactly once.
 

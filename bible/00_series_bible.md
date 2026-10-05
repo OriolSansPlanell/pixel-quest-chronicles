@@ -1,11 +1,11 @@
 ---
 id: series-bible
-title: Pixel Quest Chronicles — Series Bible
+title: Nat 20 Pixels — Series Bible
 version: 1.0
 status: canon
 ---
 
-# Pixel Quest Chronicles — Series Bible
+# Nat 20 Pixels — Series Bible
 
 This is the master reference for every model and every human who writes, plans, draws or checks an episode. When anything in a script, plan or wiki page disagrees with this bible, the bible wins unless the bible itself has been amended by a logged retcon (see §12).
 
@@ -29,7 +29,7 @@ The bible is split into files so that prompts can include only what they need:
 
 ## 1. The show in one paragraph
 
-*Pixel Quest Chronicles* follows four unlikely companions — a disgraced dwarf soldier, an elf archivist, a halfling pickpocket and a foundling priestess — from their first night on a failing frontier road to the moment, two years later, when they decide whether the gods of their world deserve to keep burning. It is an actual-play adventure told as a 16-bit top-down RPG: every swing, spell and lie is decided by real dice, and the story bends around the results.
+*Nat 20 Pixels* follows four unlikely companions — a disgraced dwarf soldier, an elf archivist, a halfling pickpocket and a foundling priestess — from their first night on a failing frontier road to the moment, two years later, when they decide whether the gods of their world deserve to keep burning. It is an actual-play adventure told as a 16-bit top-down RPG: every swing, spell and lie is decided by real dice, and the story bends around the results.
 
 ## 2. Premise and central question
 

@@ -57,7 +57,7 @@ def timeline(seed: str = SEED) -> dict:
     result, types = fight(seed)
     battle = battle_cues(result, kinds=KINDS, names=NAMES, attack_types=types, music="battle", origin=(0, 0))
     intro = [
-        {"op": "title", "lines": ["PIXEL QUEST CHRONICLES", "Episode 1 - Lantern Thirty-Seven"], "duration": 2.6},
+        {"op": "title", "lines": ["NAT 20 PIXELS", "Episode 1 - Lantern Thirty-Seven"], "duration": 2.6},
         {"op": "scene", "map": "brindle_cross", "time_of_day": "dusk", "camera": [19, 11]},
         {"op": "fade", "from": "black", "to": "clear", "duration": 1.0, "wait": False},
         {"op": "dm_intro", "title": "Lantern Thirty-Seven",

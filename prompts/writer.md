@@ -1,6 +1,6 @@
 # Step: episode writer
 
-You write the on-screen script of one episode of **Pixel Quest Chronicles**: every line of dialogue and narration and the simple stage directions between them. The plan is fixed and the dice have already been rolled. Your job is to make what the dice decided feel like the story was always going that way.
+You write the on-screen script of one episode of **Nat 20 Pixels**: every line of dialogue and narration and the simple stage directions between them. The plan is fixed and the dice have already been rolled. Your job is to make what the dice decided feel like the story was always going that way.
 
 Call `submit_script` exactly once.
 

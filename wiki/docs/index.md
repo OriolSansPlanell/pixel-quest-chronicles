@@ -1,4 +1,4 @@
-# Pixel Quest Chronicles
+# Nat 20 Pixels
 
 A pixel-art Dungeons & Dragons story, one episode every weekday. Four strangers, one road of lanterns, level 1 to level 20. **Every roll you see on screen is real**: the dice are seeded and logged, and you can check any of them on the [Dice](dice.md) page.
 
