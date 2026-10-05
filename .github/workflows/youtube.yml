@@ -5,7 +5,7 @@
 name: youtube
 on:
   schedule:
-    - cron: "37 16 * * *"      # after the 17:00 Madrid premiere (CEST and CET)
+    - cron: "37 20 * * *"      # after the 15:00 New York premiere (EDT and EST)
   workflow_dispatch:
     inputs:
       command:

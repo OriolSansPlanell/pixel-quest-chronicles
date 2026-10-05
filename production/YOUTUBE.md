@@ -9,7 +9,7 @@ shift writes episode → relay commits it → release.yml renders the MP4 and ma
   → daily youtube.yml run after the premiere → wiki episode page gets "Watch on YouTube"
 ```
 
-Episodes premiere **in order, one per weekday at 17:00 Madrid time** (change it in
+Episodes premiere **in order, one per weekday at 15:00 New York time** (21:00 in Paris most of the year) (change it in
 `production/youtube.json`). A backlog is spread over the following weekdays, so
 the ten episodes already released fill two weeks.
 
@@ -93,7 +93,7 @@ release text as the description, and schedule it.
 ## 8. Switch it on
 
 Edit `production/youtube.json`: `"enabled": true`, and `"playlist_id": "PL…"`
-from step 1. Commit. The next run (after the next release, every day at 16:37
+from step 1. Commit. The next run (after the next release, every day at 20:37
 UTC, or **Run workflow → upload**) uploads everything released and not yet on
 YouTube, up to five per run.
 

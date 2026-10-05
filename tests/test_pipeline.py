@@ -504,6 +504,7 @@ class TestYouTube(unittest.TestCase):
         cls.yt = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(cls.yt)
         cls.cfg = load_json(ROOT / "production" / "youtube.json")
+        cls.cfg["schedule"].update(timezone="Europe/Madrid", time="17:00", weekdays=[0, 1, 2, 3, 4])
 
     def test_config_starts_disabled(self):
         self.assertFalse(self.cfg["enabled"])
