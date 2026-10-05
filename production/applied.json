@@ -33,5 +33,11 @@
   "session": "shift-20261005-0648",
   "did": [],
   "at": "20261005T085519Z"
+ },
+ "change-20261005T070005Z-shift-20261005-0648-004": {
+  "status": "rejected",
+  "reason": "episode 2 did not complete:\nFAILED: Can't commit C01-E002: the live state is at C1E2\n",
+  "message": "Episode 2: The Goblin Who Talked (part 2/2)",
+  "at": "20261005T090245Z"
  }
 }
