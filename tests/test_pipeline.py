@@ -403,12 +403,17 @@ class TestProductionQueue(unittest.TestCase):
             shutil.copy(ROOT / "production" / "queue.json", q)
             with mock.patch.object(prod, "QUEUE", q), mock.patch.object(prod, "LOG", Path(d) / "LOG.md"):
                 data = prod.load()
+                for t in data["tasks"]:   # judge the queue's shape, not how far tonight's shifts have got
+                    t["status"] = "todo"
+                data["lock"] = None
+                prod.save(data)
+                data = prod.load()
                 ids = [t["id"] for t in data["tasks"]]
                 for t in data["tasks"]:   # every prerequisite exists and comes earlier
                     for a in t.get("after", []):
                         self.assertIn(a, ids)
                         self.assertLess(ids.index(a), ids.index(t["id"]))
-                self.assertEqual(prod.ready(data)[0]["id"], "episode:2")
+                self.assertEqual(prod.ready(data)[0]["id"], data["tasks"][0]["id"])
                 self.assertEqual(prod.main(["lock", "s1"]), 0)
                 self.assertEqual(prod.main(["lock", "s2"]), 1)      # fresh lock held by s1
                 self.assertEqual(prod.main(["unlock", "s1"]), 0)

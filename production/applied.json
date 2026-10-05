@@ -26,5 +26,12 @@
   "session": "shift-20261005-0648",
   "did": [],
   "at": "20261005T085434Z"
+ },
+ "change-20261005T072428Z-shift-20261005-0648-008": {
+  "status": "applied",
+  "message": "tests: queue test checks the queue's shape, not live progress",
+  "session": "shift-20261005-0648",
+  "did": [],
+  "at": "20261005T085519Z"
  }
 }
