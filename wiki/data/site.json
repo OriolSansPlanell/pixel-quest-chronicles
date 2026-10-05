@@ -1,0 +1,5 @@
+{
+ "repo": "OriolSansPlanell/pixel-quest-chronicles",
+ "site_url": "https://oriolsansplanell.github.io/pixel-quest-chronicles",
+ "releases": "Each committed episode's video is rendered and attached to a GitHub release tagged with its id by .github/workflows/release.yml."
+}

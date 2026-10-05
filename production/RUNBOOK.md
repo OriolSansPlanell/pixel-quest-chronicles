@@ -124,18 +124,19 @@ Look for: speakers off screen, actors standing inside props, dice trays covering
 the action, a scene that is too dark. Fix by editing the script fixture (or the
 plan's marks, then everything after it: delete the later fixtures) and re-run.
 
-Then render, publish the video, and commit the episode:
+Then commit the episode:
 
 ```bash
-python3 scripts/run_episode.py <n> --agent --render full          # 1080p video (about 5 minutes)
-python3 scripts/publish_video.py <n>                         # GitHub release with the MP4 + thumbnail
 python3 scripts/run_episode.py <n> --agent --commit \
     --wiki-url https://oriolsansplanell.github.io/pixel-quest-chronicles   # advances state/, rebuilds wiki/docs
-git add -A && git commit -m "Episode <n>: <title>" && git push      # the push redeploys the wiki
+git add -A && git commit -m "Episode <n>: <title>" && git push
 ```
 
-If `publish_video.py` fails (network or permissions), commit anyway, log it, and
-leave the MP4 out of git (it is ignored); the showrunner can upload it later.
+The push does the rest on GitHub: `.github/workflows/release.yml` renders the
+1080p video on a runner (the renderer is deterministic) and publishes it as a
+release tagged with the episode id, and `.github/workflows/wiki.yml` redeploys
+the wiki. Sessions cannot create releases themselves; don't try. (You may still
+render locally with `--render preview` to watch a part of it while reviewing.)
 
 `--commit` advances `state/` and rebuilds `wiki/docs/`; it refuses to run if the
 live state is not exactly at the previous episode, which protects the order.

@@ -266,8 +266,14 @@ def build_site(docs: Path = DOCS, state_dir: Path = ROOT / "state", check_spoile
 def _episode_page(e: dict, canon: dict, sheets: dict) -> str:
     r, f, pk = e["record"], e.get("facts") or {}, e.get("packaging") or {}
     out = [f"# {_ep_title(e)}", "", f"*In-world date: {_date(r['in_world_date'])}*  ", f"*Seed: `{r['seed']}`*", ""]
-    if pk.get("video_url"):
-        out += [f"[Watch on YouTube]({pk['video_url']})", ""]
+    site = WIKI / "data" / "site.json"
+    repo = load_json(site).get("repo") if site.exists() else None
+    if pk.get("youtube_url"):
+        out += [f"[Watch on YouTube]({pk['youtube_url']})", ""]
+    if repo:
+        out += [f"[Download the episode video](https://github.com/{repo}/releases/tag/{e['id']})", ""]
+    elif pk.get("video_url"):
+        out += [f"[Watch the episode]({pk['video_url']})", ""]
     out += ["## Summary", "", f.get("summary", ""), ""]
     if f.get("events"):
         out += ["## What happened", ""] + [f"- {x}" for x in f["events"]] + [""]
