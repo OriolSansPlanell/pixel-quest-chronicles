@@ -16,7 +16,7 @@ concurrency: {group: relay, cancel-in-progress: false}
 jobs:
   relay:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -48,3 +48,23 @@ jobs:
         if: steps.apply.outputs.episodes != '0' && steps.apply.outputs.episodes != ''
         env: {GH_TOKEN: "${{ github.token }}"}
         run: gh workflow run release.yml
+      # Fallback while GitHub isn't firing this workflow's schedule (it can take
+      # hours to start on a new repository): queue the next relay run ourselves.
+      # Stops by itself once scheduled runs appear.
+      - name: Keep the relay going
+        if: always()
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          last=$(gh run list --workflow relay.yml --event schedule --limit 1 --json createdAt -q '.[0].createdAt' || true)
+          if [ -n "$last" ] && [ $(( $(date +%s) - $(date -d "$last" +%s) )) -lt 1800 ]; then
+            echo "Scheduled runs are working (last $last); no fallback needed."; exit 0
+          fi
+          hour=$(date -u +%H)
+          if [ "${{ steps.check.outputs.new }}" != "0" ] || [ "$hour" -ge 20 ] || [ "$hour" -lt 7 ]; then
+            wait=480   # busy, or shift hours (Paris night): every ~10 minutes
+          else
+            wait=2700  # quiet daytime: every ~45 minutes
+          fi
+          echo "No recent scheduled run; next relay in $wait s."
+          sleep $wait
+          gh workflow run relay.yml
