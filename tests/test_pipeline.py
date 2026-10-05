@@ -572,3 +572,31 @@ class TestYouTube(unittest.TestCase):
                 p2 = wiki._episode_page(arch["C01-E002"], canon, sheets())
             self.assertIn("watch?v=abc", p1)
             self.assertNotIn("YouTube", p2)
+
+
+class TestTrailer(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("trailer", ROOT / "scripts" / "trailer.py")
+        cls.tr = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.tr)
+        cls.spec = load_json(ROOT / "assets" / "timelines" / "trailer_c01.json")
+
+    def test_spec_points_at_real_cues_and_shorts_fit(self):
+        wide = vertical = 0.0
+        for s in self.spec["shots"]:
+            if "ep" in s:
+                tl = load_json(ROOT / "episodes" / f"C01-E{s['ep']:03d}" / "timeline.json")
+                self.assertLess(s["cue"], len(tl["cues"]), s)
+            wide += s["dur"]
+            if not s.get("wide_only"):
+                vertical += s["dur"]
+        self.assertLess(vertical, 60)
+        self.assertLess(wide, 120)
+
+    def test_start_positions_skip_wide_only_shots_in_the_vertical_cut(self):
+        shots = [{"card": ["a"], "dur": 2.0}, {"ep": 1, "cue": 1, "dur": 3.0, "wide_only": True},
+                 {"ep": 1, "cue": 2, "dur": 1.0}]
+        self.assertEqual(self.tr.start_pos("wide", shots, {}, 30, shots[1:], 1), [2.0, 5.0])
+        self.assertEqual(self.tr.start_pos("vertical", shots, {}, 30, shots[1:], 1), [None, 2.0])

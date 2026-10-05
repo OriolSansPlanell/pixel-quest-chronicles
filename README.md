@@ -34,6 +34,7 @@ This repository holds **Phase 1 — Foundations** (canon, party, state format, r
 | `scripts/run_episode.py` | Produce an episode (offline replay, live, or record). |
 | `scripts/contact_sheet.py`, `scripts/cost_report.py` | Review sheet of an episode; cost projection from its ledger. |
 | `scripts/youtube_upload.py`, `production/youtube.json` | Uploads released episodes to YouTube and schedules their premieres (`.github/workflows/youtube.yml`; setup in `production/YOUTUBE.md`). |
+| `scripts/trailer.py`, `assets/timelines/trailer_c01.json` | Cuts a trailer from the episodes' timelines in 16:9 and 9:16 (Shorts) at once. |
 
 ## Quick start
 
