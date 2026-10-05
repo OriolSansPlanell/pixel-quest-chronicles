@@ -471,3 +471,12 @@ class TestRelay(unittest.TestCase):
         self.assertFalse(r.allowed(".github/workflows/relay.yml"))
         with self.assertRaises(ValueError):
             r.parse("PQC-CHANGE 1\n=== DELETE state/world.json\n=== END\n")
+
+
+class TestClockProposals(unittest.TestCase):
+    def test_lighting_presets_map_to_clock_values(self):
+        from pqc.pipeline.resolve import clock_time
+        self.assertEqual(clock_time("day"), "noon")
+        self.assertEqual(clock_time("dusk"), "dusk")
+        with self.assertRaises(ValueError):
+            clock_time("teatime")

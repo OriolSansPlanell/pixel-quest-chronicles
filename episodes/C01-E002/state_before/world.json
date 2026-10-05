@@ -5,12 +5,12 @@
     "month": 9,
     "day": 4,
     "hearthday": null,
-    "time_of_day": "noon"
+    "time_of_day": "morning"
   },
   "series": {
     "campaign": 1,
-    "episode": 2,
-    "episode_in_campaign": 2,
+    "episode": 1,
+    "episode_in_campaign": 1,
     "phase": "campaign",
     "interlude": null
   },
@@ -53,11 +53,9 @@
         "a": "ilsevel",
         "b": "tamsin",
         "trust": 0,
-        "tension": 3,
+        "tension": 2,
         "romance": 0,
-        "notes": [
-          "C01-E002: Ilsevel did not believe Tamsin's story about the velvet thread."
-        ]
+        "notes": []
       },
       {
         "a": "ilsevel",
@@ -149,17 +147,15 @@
       "attitude": "friendly",
       "location": "loc.crooked-kettle",
       "first_seen": "C01-E001",
-      "last_seen": "C01-E002",
-      "notes": [
-        "Offered free board at the Crooked Kettle to whoever relights Lantern 37."
-      ]
+      "last_seen": "C01-E001",
+      "notes": []
     },
     "npc.wil-fenn": {
       "status": "alive",
       "attitude": "friendly",
       "location": "loc.crooked-kettle",
       "first_seen": "C01-E001",
-      "last_seen": "C01-E002",
+      "last_seen": "C01-E001",
       "notes": []
     },
     "npc.tobin-ashdown": {
@@ -185,16 +181,14 @@
     },
     "npc.rusk": {
       "status": "captive",
-      "attitude": "indifferent",
+      "attitude": "hostile",
       "location": "loc.crooked-kettle",
       "first_seen": "C01-E001",
-      "last_seen": "C01-E002",
+      "last_seen": "C01-E001",
       "notes": [
-        "Taken alive after the raid on Brindle Cross (C01-E001).",
-        "Questioned outside the Crooked Kettle (C01-E002): goblins are paid in food to carry lantern-cores up into the hills to their boss. Kept in the inn's root cellar.",
-        "Ate Oriel's bread and begged not to be sent back."
+        "Taken alive after the raid on Brindle Cross (C01-E001)."
       ],
-      "name_known": true
+      "name_known": false
     },
     "npc.skarrow": {
       "status": "unmet",
@@ -271,17 +265,6 @@
         "Report findings to Lamplighters' Hall",
         "Find out why Lantern 37 went dark"
       ]
-    },
-    {
-      "id": "q.relight-lantern-37",
-      "title": "Bring back the light of Lantern 37",
-      "status": "active",
-      "giver": "npc.maddy-fenn",
-      "reward_cp": 0,
-      "objectives": [
-        "Find out what happened to Lantern 37",
-        "Bring the light back to the south road (reward: free board at the Crooked Kettle)"
-      ]
     }
   ],
   "lanterns": {
@@ -293,9 +276,7 @@
   },
   "flags": {
     "series_started": true,
-    "ledger_unknown_warden_mark": true,
-    "cores_traded_for_food": true,
-    "rusk_afraid_to_go_back": true
+    "ledger_unknown_warden_mark": true
   },
   "hooks": [
     {
@@ -349,8 +330,8 @@
     {
       "id": "hook.velvet-hand-debt",
       "owner": "tamsin",
-      "status": "planted",
-      "planted_in": "C01-E002",
+      "status": "dormant",
+      "planted_in": null,
       "payoff_in": "C3",
       "summary": "The Velvet Hand wants 2,000 gp or the key."
     },

@@ -585,7 +585,7 @@ def _apply_one(p: dict, eid: str, sheets: dict, world: dict) -> None:
         world["location"].update({k: p[k] for k in ("id", "map", "region", "unlight") if k in p})
     elif t == "clock":
         if "time_of_day" in p:
-            world["clock"]["time_of_day"] = p["time_of_day"]
+            world["clock"]["time_of_day"] = clock_time(p["time_of_day"])
         _advance_days(world["clock"], int(p.get("advance_days", 0)))
     elif t == "rest":
         from ..progression import long_rest, short_rest
@@ -597,7 +597,7 @@ def _apply_one(p: dict, eid: str, sheets: dict, world: dict) -> None:
                 sheets[cid] = sheet_from_character(c)
             if p.get("overnight", True):
                 _advance_days(world["clock"], 1)
-                world["clock"]["time_of_day"] = p.get("wake", "morning")
+                world["clock"]["time_of_day"] = clock_time(p.get("wake", "morning"))
         elif p["kind"] == "short":
             for cid in list(sheets):
                 c = character_from_sheet(sheets[cid])
@@ -613,6 +613,17 @@ def _apply_one(p: dict, eid: str, sheets: dict, world: dict) -> None:
             s["xp"] = s.get("xp", 0) + amount
     else:
         raise ValueError(f"unsupported proposal type {t!r}")
+
+
+CLOCK_TIMES = ("dawn", "morning", "noon", "afternoon", "dusk", "evening", "night", "midnight")  # world schema
+CLOCK_ALIASES = {"day": "noon"}  # scene lighting presets that aren't clock values
+
+
+def clock_time(value: str) -> str:
+    v = CLOCK_ALIASES.get(value, value)
+    if v not in CLOCK_TIMES:
+        raise ValueError(f"time of day {value!r} (use one of {', '.join(CLOCK_TIMES)})")
+    return v
 
 
 def _advance_days(clock: dict, days: int) -> None:
