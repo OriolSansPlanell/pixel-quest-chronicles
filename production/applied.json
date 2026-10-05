@@ -1,1 +1,9 @@
-{}
+{
+ "change-20261005T062432Z-setup-test-001": {
+  "status": "applied",
+  "message": "relay test",
+  "session": "setup-test",
+  "did": [],
+  "at": "20261005T063732Z"
+ }
+}
