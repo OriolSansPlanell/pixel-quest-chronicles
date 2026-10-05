@@ -104,7 +104,10 @@
    "after": [
     "episode:4"
    ],
-   "status": "todo"
+   "status": "done",
+   "started_at": "2026-10-05T07:37:04+00:00",
+   "done_at": "2026-10-05T07:42:49+00:00",
+   "note": "The Scout Camp, 6.0 min"
   },
   {
    "id": "episode:6",

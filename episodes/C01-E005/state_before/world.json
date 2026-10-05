@@ -9,8 +9,8 @@
   },
   "series": {
     "campaign": 1,
-    "episode": 5,
-    "episode_in_campaign": 5,
+    "episode": 4,
+    "episode_in_campaign": 4,
     "phase": "campaign",
     "interlude": null
   },
@@ -77,13 +77,7 @@
         "notes": []
       }
     ],
-    "shared_inventory": [
-      {
-        "id": "dead_lantern_core",
-        "qty": 3,
-        "name": "Dead lantern-core"
-      }
-    ],
+    "shared_inventory": [],
     "shared_money_cp": 0,
     "reputation_title": null
   },
@@ -250,7 +244,7 @@
       "attitude": "helpful",
       "location": "loc.thornpike-woods",
       "first_seen": "C01-E004",
-      "last_seen": "C01-E005",
+      "last_seen": "C01-E004",
       "notes": [
         "Summoned with Find Familiar in C1E4",
         "First summoned by Ilsevel with Find Familiar at the fork of the goblin trail in Thornpike Woods (C01-E004)."
@@ -277,8 +271,7 @@
       "objectives": [
         "Inspect lanterns 30-45",
         "Report findings to Lamplighters' Hall",
-        "Find out why Lantern 37 went dark",
-        "Find out where the stolen lantern-cores are taken"
+        "Find out why Lantern 37 went dark"
       ]
     },
     {
@@ -308,9 +301,7 @@
     "rusk_afraid_to_go_back": true,
     "core_37_removed_by_hand": true,
     "pell_summoned": true,
-    "wolves_greyed_at_the_edges": true,
-    "core_cart_due_at_dawn": true,
-    "scout_camp_taken": true
+    "wolves_greyed_at_the_edges": true
   },
   "hooks": [
     {

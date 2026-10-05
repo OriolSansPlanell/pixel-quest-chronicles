@@ -9,7 +9,7 @@
   "class": "rogue",
   "subclass": null,
   "level": 1,
-  "xp": 99,
+  "xp": 74,
   "background": "criminal",
   "deity": "quill",
   "base_scores": {
@@ -34,7 +34,7 @@
   },
   "hp": {
     "max": 10,
-    "current": 9,
+    "current": 7,
     "temp": 0
   },
   "hit_dice": {
@@ -111,7 +111,7 @@
   "inventory": [
     {
       "id": "arrows",
-      "qty": 17
+      "qty": 18
     },
     {
       "id": "dagger",
@@ -123,6 +123,10 @@
     },
     {
       "id": "marked_cards",
+      "qty": 1
+    },
+    {
+      "id": "potion_of_healing",
       "qty": 1
     },
     {

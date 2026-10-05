@@ -146,8 +146,12 @@ class SayTask(Task):
         name = c.get("name")
         pitch = 240
         if speaker:
-            sprite_id = c.get("sprite", speaker)
-            spr = st.a.actor(sprite_id)
+            if c.get("sprite"):
+                spr = st.a.actor(c["sprite"])
+            elif speaker in st.actors:      # on stage: use the sprite it was spawned with (e.g. goblin-1)
+                spr = st.actors[speaker].sprites
+            else:
+                spr = st.a.actor(speaker)
             face = spr.faceset
             pitch = spr.voice_pitch
             name = name or (st.actors[speaker].name if speaker in st.actors else speaker).split(" ")[0].capitalize()

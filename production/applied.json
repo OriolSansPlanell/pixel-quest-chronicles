@@ -89,5 +89,14 @@
    "episode 4 committed"
   ],
   "at": "20261005T090534Z"
+ },
+ "change-20261005T074249Z-shift-20261005-0648-012": {
+  "status": "applied",
+  "message": "Episode 5: The Scout Camp",
+  "session": "shift-20261005-0648",
+  "did": [
+   "episode 5 committed"
+  ],
+  "at": "20261005T090603Z"
  }
 }
