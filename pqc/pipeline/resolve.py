@@ -451,8 +451,12 @@ def check_roll_cues(res: Resolution, plan: dict, sheets: dict) -> dict[str, list
         for r in rolls:
             label = _check_label(sheets, ch)
             if ch.get("group") or ch.get("contest"):
+                skill = ch.get("skill") or ""
+                con = ch.get("contest") or {}
+                if con and r["actor"] != ch["actor"]:  # the opponent rolls their own skill
+                    skill = con.get("skill") or skill
                 label = f"{_name(sheets, r['actor']) if r['actor'] in sheets else r['actor'].title()} - " \
-                        f"{(ch.get('skill') or '').replace('_', ' ').title()}"
+                        f"{skill.replace('_', ' ').title()}"
             cues.append({"op": "roll", "roll": r, "label": label,
                          "line": _line(r, "SUCCESS", "FAIL", "DC") if r.get("dc") is not None else _line(r)})
         out[cid] = cues

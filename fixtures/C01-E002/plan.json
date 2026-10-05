@@ -44,7 +44,7 @@
    "cast": [
     {"id": "oriel", "at": [11, 10], "facing": "up", "name": "Oriel"},
     {"id": "ilsevel", "at": [10, 11], "facing": "up", "name": "Ilsevel"},
-    {"id": "tamsin", "at": [13, 10], "facing": "up", "name": "Tamsin"}
+    {"id": "tamsin", "at": [14, 10], "facing": "up", "name": "Tamsin"}
    ],
    "beats": [
     "Ilsevel, notebook already open, and Tamsin, yawning, come out of the inn. Brannoc wants to frighten the goblin; Oriel wants to feed him. They do both: Oriel kneels with the bread and asks his name while Brannoc stands silent behind her (c1, Brannoc helping).",

@@ -19,5 +19,12 @@
   "session": "shift-20261005-0648",
   "did": [],
   "at": "20261005T085350Z"
+ },
+ "change-20261005T070005Z-shift-20261005-0648-003": {
+  "status": "applied",
+  "message": "Episode 2: The Goblin Who Talked (part 1/2)",
+  "session": "shift-20261005-0648",
+  "did": [],
+  "at": "20261005T085434Z"
  }
 }

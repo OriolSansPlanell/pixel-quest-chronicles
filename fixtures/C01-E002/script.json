@@ -101,6 +101,16 @@
    "id": "s2",
    "cues": [
     {
+     "op": "move",
+     "actor": "ilsevel",
+     "to": [
+      10,
+      10
+     ],
+     "face": "up",
+     "wait": false
+    },
+    {
      "op": "say",
      "speaker": "tamsin",
      "text": "Is this breakfast or an interrogation? I can't do both before noon.",
