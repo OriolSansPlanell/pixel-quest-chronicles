@@ -5,5 +5,12 @@
   "session": "setup-test",
   "did": [],
   "at": "20261005T063732Z"
+ },
+ "change-20261005T065150Z-shift-20261005-0648-001": {
+  "status": "applied",
+  "message": "wip(episode:2): plan",
+  "session": "shift-20261005-0648",
+  "did": [],
+  "at": "20261005T085305Z"
  }
 }
