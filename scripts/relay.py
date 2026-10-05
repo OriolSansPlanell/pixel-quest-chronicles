@@ -236,12 +236,16 @@ def _run(cmd: list[str], timeout: int = 3600) -> tuple[int, str]:
     return p.returncode, (p.stdout + p.stderr)[-3000:]
 
 
-def apply_bundle(name: str, text: str) -> dict:
-    """Apply one bundle on top of the working tree; returns the applied.json entry."""
+def apply_bundle(name: str, text: str | list[str]) -> dict:
+    """Apply one bundle (or all parts of a multi-part bundle, together) on top of
+    the working tree; returns the applied.json entry."""
+    texts = text if isinstance(text, list) else [text]
     try:
-        b = parse(text)
+        parsed = [parse(t) for t in texts]
     except ValueError as exc:
         return {"status": "rejected", "reason": str(exc)}
+    b = {"meta": parsed[-1]["meta"], "ops": [op for x in parsed for op in x["ops"]],
+         "runs": [r for x in parsed for r in x["runs"]]}
     maps = set()   # the tree is clean here (each bundle is committed), so a failure rolls back to HEAD
     for op, path, data in b["ops"]:
         target = ROOT / path
@@ -298,16 +302,49 @@ def apply_all(items: list[tuple[str, callable]]) -> int:
     todo = [(n, load) for n, load in sorted(items) if n not in applied]
     print(f"{len(items)} bundle(s) in the folder, {len(todo)} new")
     episodes = 0
-    for name, load in todo:
-        entry = apply_bundle(name, load())
-        print(f"{name}: {entry['status']}" + (f" - {entry.get('reason', '')[:300]}" if entry["status"] != "applied" else ""))
-        _commit(name, entry)
+    texts = {n: load() for n, load in todo}
+    groups = _group_parts(texts)
+    for names in groups:
+        if names is None:
+            break  # an incomplete multi-part bundle: wait for its other parts, keep the order
+        entry = apply_bundle(names[0], [texts[n] for n in names])
+        print(f"{', '.join(names)}: {entry['status']}" +
+              (f" - {entry.get('reason', '')[:300]}" if entry["status"] != "applied" else ""))
+        for n in names:
+            _commit(n, entry)
         episodes += sum(1 for d in entry.get("did", []) if d.startswith("episode"))
     out = os.environ.get("GITHUB_OUTPUT")
     if out:
         with open(out, "a") as fh:
             fh.write(f"changed={'true' if todo else 'false'}\nepisodes={episodes}\n")
     return 0
+
+
+PART_RE = re.compile(r"^(.*) \(part (\d+)/(\d+)\)$")
+
+
+def _group_parts(texts: dict[str, str]) -> list[list[str] | None]:
+    """Bundles in name order, with the parts of one multi-part bundle grouped so
+    they are applied (and tested) together. None marks an incomplete group."""
+    out, i, names = [], 0, sorted(texts)
+    while i < len(names):
+        m = re.search(r"^message: (.*)$", texts[names[i]], re.M)
+        pm = PART_RE.match(m.group(1)) if m else None
+        if not pm:
+            out.append([names[i]])
+            i += 1
+            continue
+        total = int(pm.group(3))
+        group = names[i:i + total]
+        ok = len(group) == total and all(
+            (mm := re.search(r"^message: (.*)$", texts[g], re.M)) and PART_RE.match(mm.group(1))
+            and PART_RE.match(mm.group(1)).group(1) == pm.group(1) for g in group)
+        if not ok:
+            out.append(None)
+            break
+        out.append(group)
+        i += total
+    return out
 
 
 def drive_items() -> list[tuple[str, callable]]:

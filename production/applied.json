@@ -116,23 +116,5 @@
    "episode 7 committed"
   ],
   "at": "20261005T090700Z"
- },
- "change-20261005T075938Z-shift-20261005-0648-015": {
-  "status": "rejected",
-  "reason": "tests failed:\nlocked by s1 0 min ago\n======================================================================\nFAIL: test_manifest_files_exist (test_render.TestAssets.test_manifest_files_exist)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/runner/work/pixel-quest-chronicles/pixel-quest-chronicles/tests/test_render.py\", line 67, in test_manifest_files_exist\n    self.assertEqual(self.a.missing_files(), [])\nAssertionError: Lists differ: ['assets/sprites/barn_burning.png', 'asset[84 chars]png'] != []\n\nFirst list contains 4 additional elements.\nFirst extra element 0:\n'assets/sprites/barn_burning.png'\n\n+ []\n- ['assets/sprites/barn_burning.png',\n-  'assets/sprites/watermill.png',\n-  'assets/sprites/smoke.png',\n-  'assets/sprites/pendant_black.png']\n\n----------------------------------------------------------------------\nRan 185 tests in 27.441s\n\nFAILED (failures=1)\n",
-  "message": "Maps wending_mill and fort_harrow, materials mill and fort (part 1/3)",
-  "at": "20261005T090728Z"
- },
- "change-20261005T075938Z-shift-20261005-0648-016": {
-  "status": "rejected",
-  "reason": "tests failed:\nlocked by s1 0 min ago\n======================================================================\nERROR: test_maps_validate_and_render (test_render.TestAssets.test_maps_validate_and_render)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/runner/work/pixel-quest-chronicles/pixel-quest-chronicles/tests/test_render.py\", line 102, in test_maps_validate_and_render\n    tm = TileMap.from_dict(d, self.a)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/pixel-quest-chronicles/pixel-quest-chronicles/pqc/render/tilemap.py\", line 114, in from_dict\n    spec = assets.prop_spec(pd[\"prop\"])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/pixel-quest-chronicles/pixel-quest-chronicles/pqc/render/assets.py\", line 170, in prop_spec\n    return self.manifest[\"props\"][prop_id]\n           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyError: 'water_block'\n\n----------------------------------------------------------------------\nRan 185 tests in 27.398s\n\nFAILED (errors=1)\n",
-  "message": "Maps wending_mill and fort_harrow, materials mill and fort (part 2/3)",
-  "at": "20261005T090757Z"
- },
- "change-20261005T075938Z-shift-20261005-0648-017": {
-  "status": "rejected",
-  "reason": "tests failed:\nlocked by s1 0 min ago\n======================================================================\nERROR: test_maps_validate_and_render (test_render.TestAssets.test_maps_validate_and_render)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/runner/work/pixel-quest-chronicles/pixel-quest-chronicles/tests/test_render.py\", line 102, in test_maps_validate_and_render\n    tm = TileMap.from_dict(d, self.a)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/pixel-quest-chronicles/pixel-quest-chronicles/pqc/render/tilemap.py\", line 114, in from_dict\n    spec = assets.prop_spec(pd[\"prop\"])\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/pixel-quest-chronicles/pixel-quest-chronicles/pqc/render/assets.py\", line 170, in prop_spec\n    return self.manifest[\"props\"][prop_id]\n           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyError: 'water_block'\n\n----------------------------------------------------------------------\nRan 185 tests in 27.180s\n\nFAILED (errors=1)\n",
-  "message": "Maps wending_mill and fort_harrow, materials mill and fort (part 3/3)",
-  "at": "20261005T090825Z"
  }
 }

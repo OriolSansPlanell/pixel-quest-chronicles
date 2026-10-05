@@ -480,3 +480,17 @@ class TestClockProposals(unittest.TestCase):
         self.assertEqual(clock_time("dusk"), "dusk")
         with self.assertRaises(ValueError):
             clock_time("teatime")
+
+
+class TestRelayParts(unittest.TestCase):
+    def test_parts_are_grouped_and_wait_for_each_other(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("relay", ROOT / "scripts" / "relay.py")
+        r = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(r)
+        t = lambda m: f"PQC-CHANGE 1\nmessage: {m}\n=== END\n"  # noqa: E731
+        texts = {"c-001": t("plan"), "c-002": t("maps (part 1/2)"), "c-003": t("maps (part 2/2)"),
+                 "c-004": t("episode")}
+        self.assertEqual(r._group_parts(texts), [["c-001"], ["c-002", "c-003"], ["c-004"]])
+        del texts["c-003"]
+        self.assertEqual(r._group_parts(texts), [["c-001"], None])
