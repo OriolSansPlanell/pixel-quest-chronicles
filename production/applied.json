@@ -48,5 +48,12 @@
    "map crooked_kettle_interior regenerated"
   ],
   "at": "20261005T090314Z"
+ },
+ "change-20261005T071627Z-shift-20261005-0648-006": {
+  "status": "applied",
+  "message": "wip(episode:3): plan, script, continuity",
+  "session": "shift-20261005-0648",
+  "did": [],
+  "at": "20261005T090341Z"
  }
 }
