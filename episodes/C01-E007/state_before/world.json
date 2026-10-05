@@ -3,14 +3,14 @@
   "clock": {
     "year": 1047,
     "month": 9,
-    "day": 6,
+    "day": 5,
     "hearthday": null,
     "time_of_day": "morning"
   },
   "series": {
     "campaign": 1,
-    "episode": 7,
-    "episode_in_campaign": 7,
+    "episode": 6,
+    "episode_in_campaign": 6,
     "phase": "campaign",
     "interlude": null
   },
@@ -73,22 +73,26 @@
       {
         "a": "tamsin",
         "b": "oriel",
-        "trust": 2,
+        "trust": 1,
         "tension": 0,
         "romance": 0,
-        "notes": [
-          "C01-E007: Tamsin heard the story of the night Father Tobin found Oriel."
-        ]
+        "notes": []
       }
     ],
-    "shared_inventory": [],
+    "shared_inventory": [
+      {
+        "id": "dead_lantern_core",
+        "qty": 3,
+        "name": "Dead lantern-core"
+      }
+    ],
     "shared_money_cp": 0,
     "reputation_title": null
   },
   "location": {
-    "id": "loc.crooked-kettle",
+    "id": "loc.thornpike-woods",
     "region": "lanternmarch",
-    "map": "brindle_cross",
+    "map": "thornpike_woods",
     "pos": null,
     "unlight": "none"
   },
@@ -154,7 +158,7 @@
       "attitude": "friendly",
       "location": "loc.crooked-kettle",
       "first_seen": "C01-E001",
-      "last_seen": "C01-E007",
+      "last_seen": "C01-E002",
       "notes": [
         "Offered free board at the Crooked Kettle to whoever relights Lantern 37."
       ]
@@ -164,7 +168,7 @@
       "attitude": "friendly",
       "location": "loc.crooked-kettle",
       "first_seen": "C01-E001",
-      "last_seen": "C01-E007",
+      "last_seen": "C01-E002",
       "notes": []
     },
     "npc.tobin-ashdown": {
@@ -172,22 +176,20 @@
       "attitude": "helpful",
       "location": "loc.shrine-of-the-open-hand",
       "first_seen": "C01-E001",
-      "last_seen": "C01-E007",
+      "last_seen": "C01-E001",
       "notes": [
         "Oriel's adoptive father",
-        "Gave Oriel his own sun-disc holy symbol at her first dusk devotion.",
-        "Told the story of Saint Wenna and of finding Oriel at Lantern No. 1; keeps the three dead cores on the shrine altar (C01-E007)."
+        "Gave Oriel his own sun-disc holy symbol at her first dusk devotion."
       ]
     },
     "npc.edda-rook": {
       "status": "alive",
       "attitude": "friendly",
       "location": "loc.fort-harrow",
-      "first_seen": "C01-E007",
-      "last_seen": "C01-E007",
+      "first_seen": null,
+      "last_seen": null,
       "notes": [
-        "Brannoc's commanding officer",
-        "Sent Brannoc ('Bran Vow') a letter by rider: goblins seen near Wending Mill; look on the way back to the fort and bring help."
+        "Brannoc's commanding officer"
       ]
     },
     "npc.rusk": {
@@ -278,8 +280,7 @@
         "Inspect lanterns 30-45",
         "Report findings to Lamplighters' Hall",
         "Find out why Lantern 37 went dark",
-        "Find out where the stolen lantern-cores are taken",
-        "Find out why Lantern 41 went dark"
+        "Find out where the stolen lantern-cores are taken"
       ]
     },
     {
@@ -293,17 +294,6 @@
         "Bring the light back to the south road (reward: free board at the Crooked Kettle)",
         "Find the missing core of Lantern 37"
       ]
-    },
-    {
-      "id": "q.wending-mill",
-      "title": "Goblins near Wending Mill",
-      "status": "active",
-      "giver": "npc.edda-rook",
-      "reward_cp": 0,
-      "objectives": [
-        "Look in on Wending Mill on the road south",
-        "Report to Captain Rook at Fort Harrow"
-      ]
     }
   ],
   "lanterns": {
@@ -311,7 +301,7 @@
     "lantern_road.036": "lit",
     "lantern_road.037": "dead",
     "lantern_road.038": "lit",
-    "lantern_road.041": "dead"
+    "lantern_road.041": "lit"
   },
   "flags": {
     "series_started": true,
@@ -324,8 +314,7 @@
     "core_cart_due_at_dawn": true,
     "scout_camp_taken": true,
     "brannoc_knows_oriel_fears_the_dark": true,
-    "waymarker_old_road": true,
-    "dead_cores_on_shrine_altar": true
+    "waymarker_old_road": true
   },
   "hooks": [
     {

@@ -107,5 +107,14 @@
    "episode 6 committed"
   ],
   "at": "20261005T090632Z"
+ },
+ "change-20261005T075200Z-shift-20261005-0648-014": {
+  "status": "applied",
+  "message": "Episode 7: The Saint of the Open Hand",
+  "session": "shift-20261005-0648",
+  "did": [
+   "episode 7 committed"
+  ],
+  "at": "20261005T090700Z"
  }
 }
